@@ -7,7 +7,9 @@ gem 'devise'
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
-
+gem 'grape'
+gem 'rack-cors', :require => 'rack/cors'
+gem 'grape-active_model_serializers'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
