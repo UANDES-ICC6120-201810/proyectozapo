@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bus_stop: one
+  mac: MyString
+  ip: MyString
+  status: MyString
+  token: MyString
+  last_message: MyString
+
+two:
+  bus_stop: two
+  mac: MyString
+  ip: MyString
+  status: MyString
+  token: MyString
+  last_message: MyString

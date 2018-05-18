@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bus_stop: one
+  service_references: MyString
+  last_arrival_estimation: MyString
+  captured_at: 2018-05-18 09:41:12
+
+two:
+  bus_stop: two
+  service_references: MyString
+  last_arrival_estimation: MyString
+  captured_at: 2018-05-18 09:41:12
