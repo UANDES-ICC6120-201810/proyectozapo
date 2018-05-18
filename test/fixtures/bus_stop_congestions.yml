@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bus_stop: one
+  event_time: 2018-05-18 09:36:29
+  amount_of_people: 9.99
+  image_url: MyString
+
+two:
+  bus_stop: two
+  event_time: 2018-05-18 09:36:29
+  amount_of_people: 9.99
+  image_url: MyString

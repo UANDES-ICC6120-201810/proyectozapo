@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  access_point: one
+  file_package: one
+  sent: 2018-05-18 09:31:36
+  installed: 2018-05-18 09:31:36
+
+two:
+  access_point: two
+  file_package: two
+  sent: 2018-05-18 09:31:36
+  installed: 2018-05-18 09:31:36

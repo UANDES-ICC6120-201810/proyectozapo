@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dispositive: one
+  access_point: one
+
+two:
+  dispositive: two
+  access_point: two

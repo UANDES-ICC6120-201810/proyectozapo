@@ -1,0 +1,2 @@
+class AccessGroup < ApplicationRecord
+end
