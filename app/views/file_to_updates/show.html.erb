@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>File package:</strong>
+  <%= @file_to_update.file_package.name %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @file_to_update.name %>
+</p>
+
+<p>
+  <strong>File:</strong>
+  <%= @file_to_update.file %>
+</p>
+
+<%= link_to 'Edit', edit_file_to_update_path(@file_to_update) %> |
+<%= link_to 'Back', file_to_updates_path %>

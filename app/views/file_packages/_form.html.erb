@@ -1,0 +1,22 @@
+<%= form_with(model: file_package, local: true) do |form| %>
+  <% if file_package.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(file_package.errors.count, "error") %> prohibited this file_package from being saved:</h2>
+
+      <ul>
+      <% file_package.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

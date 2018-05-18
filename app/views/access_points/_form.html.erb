@@ -1,0 +1,47 @@
+<%= form_with(model: access_point, local: true) do |form| %>
+  <% if access_point.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(access_point.errors.count, "error") %> prohibited this access_point from being saved:</h2>
+
+      <ul>
+      <% access_point.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :bus_stop_id %>
+    <%= form.text_field :bus_stop_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mac %>
+    <%= form.text_field :mac %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ip %>
+    <%= form.text_field :ip %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :token %>
+    <%= form.text_field :token %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_message %>
+    <%= form.text_field :last_message %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

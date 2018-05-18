@@ -18,6 +18,18 @@
         <ul class="nav justify-content-end">
           <% if user_signed_in? %>
             <li>
+              <span style="display:inline-block; width: 150px;"><%= link_to('Access Point', access_points_path) %></span>
+            </li>
+            <li>
+              <span style="display:inline-block; width: 150px;"><%= link_to('Bus Stop', bus_stops_path) %></span>
+            </li>
+            <li>
+              <span style="display:inline-block; width: 150px;"><%= link_to('File to Update', file_to_updates_path) %></span>
+            </li>
+            <li>
+              <span style="display:inline-block; width: 150px;"><%= link_to('File Package', file_packages_path) %></span>
+            </li>
+            <li>
               <span style="display:inline-block; width: 90px;"><%= link_to('Edit User', edit_user_registration_path) %></span>
             </li>
             <li>
