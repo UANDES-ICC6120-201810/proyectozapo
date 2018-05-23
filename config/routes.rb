@@ -7,5 +7,11 @@ Rails.application.routes.draw do
   resources :file_to_updates
   resources :file_packages
   resources :bus_stops
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :bus_events do
+    collection do
+      post 'create'
+    end
+  end
+  post 'auth/login', to: 'authentication#authenticate'
+  post 'signup', to: 'access_points#sign_up'
 end

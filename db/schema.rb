@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_18_135609) do
+ActiveRecord::Schema.define(version: 2018_05_22_233607) do
 
   create_table "access_group_bus_stops", force: :cascade do |t|
     t.integer "access_group_id"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2018_05_18_135609) do
     t.string "last_message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
     t.index ["bus_stop_id"], name: "index_access_points_on_bus_stop_id"
   end
 

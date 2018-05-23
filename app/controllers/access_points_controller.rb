@@ -1,5 +1,17 @@
 class AccessPointsController < ApplicationController
   before_action :set_access_point, only: [:show, :edit, :update, :destroy]
+  protect_from_forgery with: :null_session
+  #skip_before_action :authorize_request, only: :sign_up
+  skip_before_action :authenticate_user!, only: :sign_up
+
+  # POST /signup
+  # return authenticated token upon signup
+  def sign_up
+    access_point = AccessPoint.create!(access_point_params)
+    auth_token = AuthenticateAccessPoint.new(access_point.ip, access_point.password).call
+    response = { message: Message.account_created, auth_token: auth_token }
+    json_response(response, :created)
+  end
 
   # GET /access_points
   # GET /access_points.json
@@ -25,7 +37,6 @@ class AccessPointsController < ApplicationController
   # POST /access_points.json
   def create
     @access_point = AccessPoint.new(access_point_params)
-
     respond_to do |format|
       if @access_point.save
         format.html { redirect_to @access_point, notice: 'Access point was successfully created.' }
@@ -69,6 +80,7 @@ class AccessPointsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def access_point_params
-      params.require(:access_point).permit(:bus_stop_id, :mac, :ip, :status, :token, :last_message)
+      #params.require(:access_point).permit(:bus_stop_id, :mac, :ip, :status, :token, :last_message, :password, :password_confirmation)
+      params.permit(:bus_stop_id, :mac, :ip, :status, :token, :last_message, :password, :password_confirmation)
     end
 end
