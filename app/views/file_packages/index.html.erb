@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Archivos</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +15,7 @@
     <% @file_packages.each do |file_package| %>
       <tr>
         <td><%= file_package.name %></td>
+        <td><button type="button">Ver Archivos</button></td>
         <td><%= link_to 'Show', file_package %></td>
         <td><%= link_to 'Edit', edit_file_package_path(file_package) %></td>
         <td><%= link_to 'Destroy', file_package, method: :delete, data: { confirm: 'Are you sure?' } %></td>

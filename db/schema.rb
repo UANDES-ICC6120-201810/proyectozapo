@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_22_233607) do
+ActiveRecord::Schema.define(version: 2018_05_24_161531) do
 
   create_table "access_group_bus_stops", force: :cascade do |t|
     t.integer "access_group_id"
@@ -164,13 +164,20 @@ ActiveRecord::Schema.define(version: 2018_05_22_233607) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "file_to_updates", force: :cascade do |t|
+  create_table "file_to_update_file_packages", force: :cascade do |t|
+    t.integer "file_to_update_id"
     t.integer "file_package_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["file_package_id"], name: "index_file_to_update_file_packages_on_file_package_id"
+    t.index ["file_to_update_id"], name: "index_file_to_update_file_packages_on_file_to_update_id"
+  end
+
+  create_table "file_to_updates", force: :cascade do |t|
     t.string "name"
     t.string "file"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["file_package_id"], name: "index_file_to_updates_on_file_package_id"
   end
 
   create_table "logs", force: :cascade do |t|
