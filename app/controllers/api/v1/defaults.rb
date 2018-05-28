@@ -16,6 +16,16 @@ module API
             @permitted_params ||= declared(params, include_missing: false)
           end
 
+          def access_point_logger
+            begin
+              current_access_point = AuthorizeApiRequest.new(headers).call[:access_point]
+            rescue
+              ExceptionHandler
+              error!('Not Authorized', 401)
+            end
+            @current_access_point = current_access_point
+          end
+
           def logger
             Rails.logger
           end

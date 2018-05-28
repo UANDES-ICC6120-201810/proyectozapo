@@ -23,6 +23,7 @@ class AccessPointsController < ApplicationController
 
   # GET /access_points/new
   def new
+    @bus_stops = BusStop.all
     @access_point = AccessPoint.new
   end
 
