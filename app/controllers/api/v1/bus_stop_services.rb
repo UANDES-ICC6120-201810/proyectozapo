@@ -5,7 +5,7 @@ module API
       #Auth
       before {access_point_logger}
 
-      resource :bus_stop_services do
+      resource :estimation_of_buses do
         desc "Buses estimated waiting time"
         get "", root: :bus_stop_services do
           busStopId = @current_access_point.bus_stop_id
