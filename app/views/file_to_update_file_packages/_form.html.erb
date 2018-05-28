@@ -1,0 +1,27 @@
+<%= form_with(model: file_to_update_file_package, url: [@file_package, @file_to_update_file_package], local: true) do |form| %>
+  <% if file_to_update_file_package.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(file_to_update_file_package.errors.count, "error") %> prohibited this file_to_update_file_package from being saved:</h2>
+
+      <ul>
+      <% file_to_update_file_package.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :file_package_id, "Nombre del paquete:"%>
+    <%= form.text_field :file_package_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :file_to_update_id %>
+    <%= form.text_field :file_to_update_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

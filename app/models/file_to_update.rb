@@ -1,8 +1,6 @@
 class FileToUpdate < ApplicationRecord
-  belongs_to :file_package
   has_one_attached :file
   validate :file_validation
-
 
   private
 

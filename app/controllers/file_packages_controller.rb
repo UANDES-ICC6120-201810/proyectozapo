@@ -10,7 +10,18 @@ class FilePackagesController < ApplicationController
   # GET /file_packages/1
   # GET /file_packages/1.json
   def show
+    @final_check = []
+    @file_to_update = FileToUpdate.all
+    @file_to_update_file_package = FileToUpdateFilePackage.find_by(file_package_id: @file_package.id)
+    @file_to_update.each do |file_update|
+      if !@file_to_update_file_package.nil?
+        if @file_to_update_file_package.file_to_update_id == file_update.id
+          @final_check << file_update.id
+        end
+      end
+    end
   end
+
 
   # GET /file_packages/new
   def new
@@ -25,9 +36,10 @@ class FilePackagesController < ApplicationController
   # POST /file_packages.json
   def create
     @file_package = FilePackage.new(file_package_params)
-
     respond_to do |format|
       if @file_package.save
+        @file_to_update_file_package = FileToUpdateFilePackage.new(file_package_id: @file_package.id)
+        @file_to_update_file_package.save
         format.html { redirect_to @file_package, notice: 'File package was successfully created.' }
         format.json { render :show, status: :created, location: @file_package }
       else
