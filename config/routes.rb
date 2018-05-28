@@ -5,9 +5,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
   resources :access_points
   resources :file_to_updates
-  resources :file_packages do
-    resources :file_to_update_file_packages
-  end
+  resources :file_packages
   resources :bus_stops
 
   resources :bus_events do
