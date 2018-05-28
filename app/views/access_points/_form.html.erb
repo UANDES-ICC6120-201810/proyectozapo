@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= form.label :bus_stop_id %>
-    <%= form.text_field :bus_stop_id %>
+    <%= form.select :bus_stop_id, options_for_select(@bus_stops.map{|s|[s.code, s.id]}) %>
   </div>
 
   <div class="field">
@@ -29,11 +29,6 @@
   <div class="field">
     <%= form.label :status %>
     <%= form.text_field :status %>
-  </div>
-
-  <div class="field">
-    <%= form.label :token %>
-    <%= form.text_field :token %>
   </div>
 
   <div class="field">
