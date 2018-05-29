@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
 
   # Check for valid request token and return user
   def authorize_request
-    @current_acces_point = (AuthorizeApiRequest.new(request.headers).call)[:acces_point]
+    @current_access_point = (AuthorizeApiRequest.new(request.headers).access_point_call)[:access_point]
   end
 end

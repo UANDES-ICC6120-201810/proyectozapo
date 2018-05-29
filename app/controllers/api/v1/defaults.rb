@@ -18,12 +18,22 @@ module API
 
           def access_point_logger
             begin
-              current_access_point = AuthorizeApiRequest.new(headers).call[:access_point]
+              current_access_point = AuthorizeApiRequest.new(headers).access_point_call[:access_point]
             rescue
               ExceptionHandler
               error!('Not Authorized', 401)
             end
             @current_access_point = current_access_point
+          end
+
+          def user_client_logger
+            begin
+              user_client = AuthorizeApiRequest.new(headers).user_client_call[:user]
+            rescue
+              ExceptionHandler
+              error!('Not Authorized', 401)
+            end
+            @current_user = user_client
           end
 
           def logger
