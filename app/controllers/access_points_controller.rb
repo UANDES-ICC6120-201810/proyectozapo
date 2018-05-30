@@ -1,6 +1,6 @@
 class AccessPointsController < ApplicationController
   before_action :set_access_point, only: [:show, :edit, :update, :destroy]
-  #protect_from_forgery with: :null_session
+  protect_from_forgery with: :null_session
   #skip_before_action :authorize_request, only: :sign_up
   skip_before_action :authenticate_user!, only: [:sign_up, :create]
 

@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   end
   post 'auth/login', to: 'authentication#authenticate'
   post 'signup', to: 'access_points#sign_up'
+  post 'file_packages/ajaxFunction'
 end
