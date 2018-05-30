@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_24_161531) do
+ActiveRecord::Schema.define(version: 2018_05_28_062100) do
 
   create_table "access_group_bus_stops", force: :cascade do |t|
     t.integer "access_group_id"
@@ -143,12 +143,6 @@ ActiveRecord::Schema.define(version: 2018_05_24_161531) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "buses", force: :cascade do |t|
-    t.string "bus_plate_number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "dispositives", force: :cascade do |t|
     t.string "name"
     t.string "type"
@@ -231,6 +225,13 @@ ActiveRecord::Schema.define(version: 2018_05_24_161531) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["user_role_id"], name: "index_users_on_user_role_id"
+  end
+
+  create_table "vehicles", force: :cascade do |t|
+    t.string "plate_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "is_bus"
   end
 
 end
