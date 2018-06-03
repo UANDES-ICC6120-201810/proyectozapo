@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_28_062100) do
+ActiveRecord::Schema.define(version: 2018_06_03_194854) do
 
   create_table "access_group_bus_stops", force: :cascade do |t|
     t.integer "access_group_id"
@@ -92,26 +92,26 @@ ActiveRecord::Schema.define(version: 2018_05_28_062100) do
   end
 
   create_table "bus_events", force: :cascade do |t|
-    t.integer "bus_id"
+    t.integer "vehicle_id"
     t.integer "bus_stop_id"
     t.datetime "event_time"
     t.decimal "bus_speed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["bus_id"], name: "index_bus_events_on_bus_id"
     t.index ["bus_stop_id"], name: "index_bus_events_on_bus_stop_id"
+    t.index ["vehicle_id"], name: "index_bus_events_on_vehicle_id"
   end
 
   create_table "bus_services", force: :cascade do |t|
     t.integer "service_id"
-    t.integer "bus_id"
+    t.integer "vehicle_id"
     t.integer "operator_id"
     t.datetime "captured_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["bus_id"], name: "index_bus_services_on_bus_id"
     t.index ["operator_id"], name: "index_bus_services_on_operator_id"
     t.index ["service_id"], name: "index_bus_services_on_service_id"
+    t.index ["vehicle_id"], name: "index_bus_services_on_vehicle_id"
   end
 
   create_table "bus_stop_congestions", force: :cascade do |t|
@@ -126,11 +126,11 @@ ActiveRecord::Schema.define(version: 2018_05_28_062100) do
 
   create_table "bus_stop_services", force: :cascade do |t|
     t.integer "bus_stop_id"
-    t.string "service_references"
     t.string "last_arrival_estimation"
     t.datetime "captured_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "service_id"
     t.index ["bus_stop_id"], name: "index_bus_stop_services_on_bus_stop_id"
   end
 
