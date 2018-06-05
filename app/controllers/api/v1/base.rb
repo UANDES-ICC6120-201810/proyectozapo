@@ -6,6 +6,7 @@ module API
       mount API::V1::Vehicles
       mount API::V1::BusStopServices
       mount API::V1::BusEvents
+      mount API::V1::BusStops
       # mount API::V1::AnotherResource
     end
   end

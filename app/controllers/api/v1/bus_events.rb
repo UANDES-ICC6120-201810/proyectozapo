@@ -16,7 +16,7 @@ module API
         post "", root: :bus_events do
           { 'declared_params' => declared(params) }
           plate_number = permitted_params[:plate_number]
-          vehicle = Vehicle.where(bus_plate_number: plate_number).first!
+          vehicle = Vehicle.where(plate_number: plate_number).first!
           if vehicle.present? and vehicle[:is_bus]
             create_bus_event(vehicle)
             {'results': 'event added'}
@@ -37,4 +37,5 @@ module API
     end
   end
 end
+
 
