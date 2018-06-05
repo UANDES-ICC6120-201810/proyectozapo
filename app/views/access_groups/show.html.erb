@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @access_group.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @access_group.description %>
+</p>
+
+<%= link_to 'Edit', edit_access_group_path(@access_group) %> |
+<%= link_to 'Back', access_groups_path %>

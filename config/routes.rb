@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :file_to_updates
   resources :file_packages
   resources :bus_stops
+  resources :access_groups
 
   resources :bus_events do
     collection do
