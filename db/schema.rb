@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_03_194854) do
+ActiveRecord::Schema.define(version: 2018_06_05_023300) do
 
   create_table "access_group_bus_stops", force: :cascade do |t|
     t.integer "access_group_id"
@@ -131,6 +131,7 @@ ActiveRecord::Schema.define(version: 2018_06_03_194854) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "service_id"
+    t.boolean "active"
     t.index ["bus_stop_id"], name: "index_bus_stop_services_on_bus_stop_id"
   end
 
@@ -232,6 +233,8 @@ ActiveRecord::Schema.define(version: 2018_06_03_194854) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "is_bus"
+    t.integer "bus_stop_service_id"
+    t.index ["bus_stop_service_id"], name: "index_vehicles_on_bus_stop_service_id"
   end
 
 end
