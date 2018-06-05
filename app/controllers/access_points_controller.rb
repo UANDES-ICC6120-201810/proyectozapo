@@ -29,6 +29,7 @@ class AccessPointsController < ApplicationController
 
   # GET /access_points/1/edit
   def edit
+    @bus_stops = BusStop.all
   end
 
   # POST /access_points
