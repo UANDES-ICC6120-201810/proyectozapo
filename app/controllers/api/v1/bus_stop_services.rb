@@ -9,7 +9,7 @@ module API
         desc "Buses estimated waiting time"
         get "", root: :bus_stop_services do
           busStopId = @current_access_point.bus_stop_id
-          BusStopService.where(bus_stop_id: busStopId)
+          BusStopService.where(bus_stop_id: busStopId, active: true)
         end
       end
     end
