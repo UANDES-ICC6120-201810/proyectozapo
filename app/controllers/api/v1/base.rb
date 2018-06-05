@@ -9,6 +9,7 @@ module API
       mount API::V1::BusStops
       mount API::V1::BusStopCongestions
       mount API::V1::OccupationEventPeopleCounts
+      mount API::V1::AddEstimationOfBuses
       # mount API::V1::AnotherResource
     end
   end

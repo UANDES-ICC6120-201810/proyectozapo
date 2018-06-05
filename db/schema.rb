@@ -133,8 +133,12 @@ ActiveRecord::Schema.define(version: 2018_06_05_183512) do
     t.datetime "captured_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "active"
+    t.integer "vehicle_id"
     t.integer "service_id"
     t.index ["bus_stop_id"], name: "index_bus_stop_services_on_bus_stop_id"
+    t.index ["service_id"], name: "index_bus_stop_services_on_service_id"
+    t.index ["vehicle_id"], name: "index_bus_stop_services_on_vehicle_id"
   end
 
   create_table "bus_stops", force: :cascade do |t|
