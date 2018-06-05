@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_05_023300) do
+ActiveRecord::Schema.define(version: 2018_06_05_181101) do
 
   create_table "access_group_bus_stops", force: :cascade do |t|
     t.integer "access_group_id"
@@ -130,9 +130,12 @@ ActiveRecord::Schema.define(version: 2018_06_05_023300) do
     t.datetime "captured_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "service_id"
     t.boolean "active"
+    t.integer "vehicle_id"
+    t.integer "service_id"
     t.index ["bus_stop_id"], name: "index_bus_stop_services_on_bus_stop_id"
+    t.index ["service_id"], name: "index_bus_stop_services_on_service_id"
+    t.index ["vehicle_id"], name: "index_bus_stop_services_on_vehicle_id"
   end
 
   create_table "bus_stops", force: :cascade do |t|
@@ -233,8 +236,6 @@ ActiveRecord::Schema.define(version: 2018_06_05_023300) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "is_bus"
-    t.integer "bus_stop_service_id"
-    t.index ["bus_stop_service_id"], name: "index_vehicles_on_bus_stop_service_id"
   end
 
 end
