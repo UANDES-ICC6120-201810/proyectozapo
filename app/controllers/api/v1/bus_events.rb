@@ -38,5 +38,3 @@ module API
     end
   end
 end
-
-
