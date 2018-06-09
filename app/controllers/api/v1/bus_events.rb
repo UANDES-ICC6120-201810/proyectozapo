@@ -5,14 +5,21 @@ module API
       #Auth
       before {access_point_logger}
 
+      params do
+        requires :plate_number, type: String
+        requires :speed, type: BigDecimal
+        requires :event_time, type: DateTime
+      end
+
       resource :vehicle_event do
         desc "Information captured in the control point of a vehicle"
         post "", root: :vehicle_events do
           { 'declared_params' => declared(params) }
           plate_number = permitted_params[:plate_number]
           vehicle = Vehicle.where(plate_number: plate_number).first
+          puts(vehicle)
           if not vehicle.present?
-            Vehicle.create!({plate_number: plate_number, is_bus: false})
+            Vehicle.create!({plate_number: plate_number})
           end
           vehicle = Vehicle.where(plate_number: plate_number).first!
           begin
@@ -31,5 +38,3 @@ module API
     end
   end
 end
-
-

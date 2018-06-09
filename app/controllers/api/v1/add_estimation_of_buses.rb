@@ -6,12 +6,12 @@ module API
       before {access_point_logger}
 
       params do
-        requires :results, type: JSON, desc: 'results'
-        optional :captured_at, type: DateTime, desc: 'calculated time'
-        optional :last_arrival_estimation, type: String, desc: 'estimation'
-        optional :route_code, type: String, desc: 'route'
-        optional :bus_stop_code, type: String, desc: 'bus stop'
-        optional :plate_number, type: String, desc: 'plate number'
+        requires :results, type: JSON
+        optional :captured_at, type: DateTime
+        optional :last_arrival_estimation, type: String
+        optional :route_code, type: String
+        optional :bus_stop_code, type: String
+        optional :plate_number, type: String
       end
 
       resource :add_estimation_of_buses do
