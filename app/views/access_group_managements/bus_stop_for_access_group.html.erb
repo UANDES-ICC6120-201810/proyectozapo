@@ -1,0 +1,24 @@
+<h1>Administrador de Paradas de Buses para AccessGroup</h1>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @access_group.name %>
+</p>
+
+<p>
+  <strong>Paradas de Buses:</strong>
+  <% @bus_stops.each do |bus_stop| %>
+  <div class="col">
+    <div class="checkbox">
+      <% if @bus_stops.include? bus_stop.id %>
+        <td><input type="checkbox" onclick="updateCheckBoxValue(event)" value="<%= bus_stop.id %>" class="btn btn-link " checked><%= bus_stop.name %></td>
+      <% else %>
+        <td><input type="checkbox" onclick="updateCheckBoxValue(event)" value="<%= bus_stop.id %>" class="btn btn-link"><%= bus_stop.name %></td>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<td><%= button_to "Actualizar Paradas de Buses", access_group_access_group_managements_bus_stop_for_access_group_path(@access_group.id), :method => "post" %></td>
+</p>
+
+<%= link_to 'Back', access_groups_path %>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   mount API::Base, at: "/"
   get 'home/index'
   devise_for :users
@@ -7,7 +8,11 @@ Rails.application.routes.draw do
   resources :file_to_updates
   resources :file_packages
   resources :bus_stops
-  resources :access_groups
+  resources :services
+  resources :access_groups do
+    get 'access_group_managements/services_for_access_group'
+    get 'access_group_managements/bus_stop_for_access_group'
+  end
 
   resources :bus_events do
     collection do

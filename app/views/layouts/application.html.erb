@@ -18,6 +18,12 @@
         <ul class="nav justify-content-end">
           <% if user_signed_in? %>
             <li>
+              <span style="display:inline-block; width: 150px;"><%= link_to('Services', services_path) %></span>
+            </li>
+            <li>
+              <span style="display:inline-block; width: 150px;"><%= link_to('Access Group', access_groups_path) %></span>
+            </li>
+            <li>
               <span style="display:inline-block; width: 150px;"><%= link_to('Access Point', access_points_path) %></span>
             </li>
             <li>
