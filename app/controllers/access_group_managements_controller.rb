@@ -24,6 +24,41 @@ class AccessGroupManagementsController < ApplicationController
     access_group_service.save
   end
 
+  def new
+    @access_group_service = AccessGroupService.new
+    @access_group_bus_stop = AccessGroupBusStop.new
+  end
+
+  # POST /access_group_managements
+  # POST /access_group_managements.json
+  def create
+    @access_group = AccessGroup.new(access_group_params)
+
+    respond_to do |format|
+      if @access_group.save
+        format.html { redirect_to @access_group, notice: 'Access group was successfully created.' }
+        format.json { render :show, status: :created, location: @access_group }
+      else
+        format.html { render :new }
+        format.json { render json: @access_group.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /access_groups/1
+  # PATCH/PUT /access_groups/1.json
+  def update
+    respond_to do |format|
+      if @access_group.update(access_group_params)
+        format.html { redirect_to @access_group, notice: 'Access group was successfully updated.' }
+        format.json { render :show, status: :ok, location: @access_group }
+      else
+        format.html { render :edit }
+        format.json { render json: @access_group.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def set_access_group
     @access_group = AccessGroup.find(params[:access_group_id])
   end

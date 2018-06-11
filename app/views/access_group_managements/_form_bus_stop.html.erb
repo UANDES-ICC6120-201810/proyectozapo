@@ -1,0 +1,9 @@
+<%= form_for :bus_stop, url: "access_group_managements/update_bus_stop_for_access_group" do |form| %>
+  <%= form.collection_check_boxes :bus_stop, BusStop.all, :id, :name, prompt: true %>
+  <br>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end  %>
+

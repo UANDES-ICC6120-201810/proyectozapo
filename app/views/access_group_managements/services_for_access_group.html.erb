@@ -1,23 +1,5 @@
 <h1>Administrador de Servicios para AccessGroup</h1>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @access_group.name %>
-</p>
-
-<p>
-  <strong>Servicios:</strong>
-  <% @service.each do |service| %>
-  <div class="col">
-    <div class="checkbox">
-      <% if @service.include? service.id %>
-        <td><input type="checkbox" onclick="updateCheckBoxValue(event)" value="<%= service.id %>" class="btn btn-link " checked><%= service.route_code %></td>
-      <% else %>
-        <td><input type="checkbox" onclick="updateCheckBoxValue(event)" value="<%= service.id %>" class="btn btn-link"><%= service.route_code %></td>
-      <% end %>
-    </div>
-  </div>
-<% end %>
-</p>
+<%= render 'form_service', service: @service %>
 
 <%= link_to 'Back', access_groups_path %>

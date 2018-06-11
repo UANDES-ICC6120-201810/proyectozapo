@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   post 'auth/login', to: 'authentication#authenticate'
   post 'signup', to: 'access_points#sign_up'
   post 'file_packages/ajaxFunction'
+  post 'access_group_managements/bus_stop_for_access_group'
 end
