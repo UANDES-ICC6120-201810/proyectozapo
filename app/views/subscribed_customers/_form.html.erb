@@ -1,0 +1,34 @@
+<%= form_with(model: subscribed_customer, local: true) do |form| %>
+  <% if subscribed_customer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(subscribed_customer.errors.count, "error") %> prohibited this subscribed_customer from being saved:</h2>
+
+      <ul>
+      <% subscribed_customer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= form.label :access_group_id %>
+    <%= form.collection_select :access_group_id, AccessGroup.order(:name), :id, :name, include_blank: false %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

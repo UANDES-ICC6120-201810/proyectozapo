@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :access_points
   resources :file_to_updates
   resources :file_packages
+  resources :subscribed_customers
   resources :bus_stops
   resources :services
   resources :access_groups do
