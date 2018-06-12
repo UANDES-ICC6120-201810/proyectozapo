@@ -1,5 +1,5 @@
 class AccessGroupManagementsController < ApplicationController
-  before_action :set_access_group, only: [:services_for_access_group, :bus_stop_for_access_group]
+  before_action :set_access_group, :set_access_group_bus_stop_ids, :set_access_group_service_ids, only: [:services_for_access_group, :bus_stop_for_access_group]
 
   def services_for_access_group
     @service = Service.all
@@ -44,13 +44,21 @@ class AccessGroupManagementsController < ApplicationController
     @access_group = AccessGroup.find(params[:access_group_id])
   end
 
-  # def set_access_group_bus_stop_ids
-  #   access_group_bus_stop = AccessGroupBusStop.where(access_group_id: params[:access_group_id])
-  #   @access_group_bus_stop_ids = []
-  #   access_group_bus_stop.each do |ag|
-  #     @access_group_bus_stop_ids << ag.bus_stop_id
-  #   end
-  # end
+   def set_access_group_bus_stop_ids
+     access_group_bus_stop = AccessGroupBusStop.where(access_group_id: params[:access_group_id])
+     @access_group_bus_stop_ids = []
+     access_group_bus_stop.each do |access_group_bus_stop|
+       @access_group_bus_stop_ids << access_group_bus_stop.bus_stop_id
+     end
+   end
+
+  def set_access_group_service_ids
+    access_group_service = AccessGroupService.where(access_group_id: params[:access_group_id])
+    @access_group_service_ids = []
+    access_group_service.each do |access_group_service|
+      @access_group_service_ids << access_group_service.service_id
+    end
+  end
 
   private
 
