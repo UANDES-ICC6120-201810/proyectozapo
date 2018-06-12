@@ -4,7 +4,6 @@ module API
       include API::V1::Defaults
       #Auth
       before {access_point_logger}
-
       resource :bus_stops do
         desc "All bus stops codes"
         get "", root: :bus_stops do

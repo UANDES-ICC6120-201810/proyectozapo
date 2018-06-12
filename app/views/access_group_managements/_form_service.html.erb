@@ -1,0 +1,9 @@
+<%= form_for :service, url: "" do |form| %>
+  <%= form.collection_check_boxes :service, Service.all, :id, :route_code, prompt: true %>
+  <br>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end  %>
+
