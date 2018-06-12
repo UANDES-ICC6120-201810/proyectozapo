@@ -17,6 +17,13 @@
         <ul class="navbar-nav mr-auto"></ul>
         <ul class="nav justify-content-end">
           <% if user_signed_in? %>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+              <li><a tabindex="-1" href="#">Action</a></li>
+              <li><a tabindex="-1" href="#">Another action</a></li>
+              <li><a tabindex="-1" href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a tabindex="-1" href="#">Separated link</a></li>
+            </ul>
             <li>
               <span style="display:inline-block; width: 150px;"><%= link_to('Services', services_path) %></span>
             </li>
