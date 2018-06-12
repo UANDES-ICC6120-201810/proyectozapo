@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :access_groups do
     get 'access_group_managements/services_for_access_group'
     get 'access_group_managements/bus_stop_for_access_group'
+    post 'access_group_managements/update_bus_stop_for_access_group'
+    post 'access_group_managements/update_services_for_access_group'
   end
 
   resources :bus_events do
