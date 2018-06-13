@@ -1,0 +1,14 @@
+  <%= form_for :file_to_updates, :url => { :action => "update_files_for_file_package"}  do |form| %>
+  <%= form.collection_check_boxes :file_to_updates, FileToUpdate.all, :id, :name, prompt: true do |b| %>
+    <% if @file_to_update_file_package_ids.include?(b.object.id) %>
+      <%= b.label(class: "check_box") { b.check_box(checked: true, class: "add_margin") + b.text } %>
+    <% else %>
+      <%= b.label(class: "check_box") { b.check_box(checked: false, class: "add_margin") + b.text } %>
+    <% end  %>
+  <% end  %>
+  <br>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end  %>
