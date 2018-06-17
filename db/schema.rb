@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_05_183512) do
+ActiveRecord::Schema.define(version: 2018_06_12_075259) do
 
   create_table "access_group_bus_stops", force: :cascade do |t|
     t.integer "access_group_id"
@@ -124,6 +124,7 @@ ActiveRecord::Schema.define(version: 2018_06_05_183512) do
     t.string "image_endpoint_source"
     t.string "image_bucket_source"
     t.string "image_name"
+    t.string "image_folder_source"
     t.index ["bus_stop_id"], name: "index_bus_stop_congestions_on_bus_stop_id"
   end
 
@@ -205,6 +206,7 @@ ActiveRecord::Schema.define(version: 2018_06_05_183512) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "description"
     t.index ["access_group_id"], name: "index_subscribed_customers_on_access_group_id"
   end
 

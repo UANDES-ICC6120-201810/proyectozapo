@@ -9,8 +9,7 @@ module API
         requires :source_endpoint, type: String
         requires :source_bucket, type: String
         requires :source_filename, type: String
-        #requires :occupation_event_id, type: Integer
-        #requires :people_count, type: Integer
+        requires :source_folder, type: String
       end
 
       resource :occupation_event do
@@ -20,9 +19,30 @@ module API
           bus_stop_congestion = BusStopCongestion.new(image_endpoint_source: permitted_params[:source_endpoint],
                                                       image_bucket_source: permitted_params[:source_bucket],
                                                       image_name: permitted_params[:source_filename],
+                                                      image_folder_source: permitted_params[:source_folder],
                                                       bus_stop_id: @current_access_point.bus_stop_id)
           bus_stop_congestion.save
+          make_post_req(permitted_params[:source_endpoint], permitted_params[:source_bucket], permitted_params[:source_folder], permitted_params[:source_filename], bus_stop_congestion.id)
           {'results': 'event added'}
+        end
+      end
+      helpers do
+        def make_post_req(source_endpoint, source_bucket, source_folder, source_filename, bus_stop_congestion_id)
+          require 'net/http'
+          require 'json'
+          begin
+              uri = URI('http://165.227.75.0:8000/count_requests/')
+              http = Net::HTTP.new(uri.host, uri.port)
+              req = Net::HTTP::Post.new(uri.path, {'Content-Type' =>'application/json'})
+              req.body = {"source_endpoint" => source_endpoint, "source_bucket" => source_bucket,
+                          "source_folder" => source_folder, "source_filename" => source_filename,
+                          "bus_stop_congestion_id" => bus_stop_congestion_id}.to_json
+              res = http.request(req)
+              puts "response #{res.body}"
+              puts JSON.parse(res.body)
+          rescue => e
+              puts "failed #{e}"
+          end
         end
       end
     end

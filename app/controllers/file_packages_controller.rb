@@ -12,15 +12,10 @@ class FilePackagesController < ApplicationController
   # GET /file_packages/1
   # GET /file_packages/1.json
   def show
-    @final_check = []
-    @file_to_update = FileToUpdate.all
-    @file_to_update_file_package = FileToUpdateFilePackage.find_by(file_package_id: @file_package.id)
-    @file_to_update.each do |file_update|
-      if !@file_to_update_file_package.nil?
-        if @file_to_update_file_package.file_to_update_id == file_update.id
-          @final_check << file_update.id
-        end
-      end
+    @file_update_from_file_package = []
+    @file_to_update_file_package = FileToUpdateFilePackage.where(file_package_id: @file_package.id)
+    @file_to_update_file_package.each do |file_update_file_package|
+      @file_update_from_file_package << file_update_file_package.file_to_update.name
     end
   end
 

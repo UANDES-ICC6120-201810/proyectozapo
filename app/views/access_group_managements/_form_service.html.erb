@@ -1,0 +1,14 @@
+<%= form_for :services, :url => { :action => "update_services_for_access_group"}  do |form| %>
+  <%= form.collection_check_boxes :services, Service.all, :id, :route_code, prompt: true do |b| %>
+    <% if @access_group_service_ids.include?(b.object.id) %>
+      <%= b.label(class: "check_box") { b.check_box(checked: true, class: "add_margin") + b.text } %>
+    <% else %>
+      <%= b.label(class: "check_box") { b.check_box(checked: false, class: "add_margin") + b.text } %>
+    <% end  %>
+  <% end  %>
+  <br>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end  %>

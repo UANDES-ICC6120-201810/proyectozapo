@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Access group:</strong>
+  <%= @subscribed_customer.access_group.name %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @subscribed_customer.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @subscribed_customer.description %>
+</p>
+
+<%= link_to 'Edit', edit_subscribed_customer_path(@subscribed_customer) %> |
+<%= link_to 'Back', subscribed_customers_path %>
