@@ -12,8 +12,17 @@ module API
         end
         get ":route_code", root: :bus_stop_services do
           busStopId = @current_access_point.bus_stop_id
-          service = Service.where(route_code: permitted_params[:route_code]).first!
-          BusStopService.where(bus_stop_id: busStopId, service_id: service.id, active: true)
+          service = Service.where(route_code: permitted_params[:route_code]).first
+          if not service.present?
+            {'results': 'error in route code'}
+          else
+            estimation = BusStopService.where(bus_stop_id: busStopId, service_id: service.id, active: true)
+            if estimation.present?
+              estimation
+            else
+              {'results': 'error, the route code does not belong to this bus stop'}
+            end
+          end
         end
       end
     end
