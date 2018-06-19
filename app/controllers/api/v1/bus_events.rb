@@ -17,7 +17,6 @@ module API
           { 'declared_params' => declared(params) }
           plate_number = permitted_params[:plate_number]
           vehicle = Vehicle.where(plate_number: plate_number).first
-          puts(vehicle)
           if not vehicle.present?
             Vehicle.create!({plate_number: plate_number})
           end

@@ -23,7 +23,6 @@ module API
           #add bus services
           results[:bus_services].each do |bus_service|
             begin
-              puts(bus_service)
               add_bus_service(bus_service)
             rescue
               {'results': 'error'}
@@ -51,9 +50,6 @@ module API
           service = Service.where(route_code: route_code).first
           bus = Vehicle.where(plate_number: plate_number).first
           operator = Operator.where(operator_number: operator_number).first
-          puts(route_code)
-          puts(plate_number)
-          puts(operator_number)
           if not service.present?
             Service.create!({route_code: route_code})
           end

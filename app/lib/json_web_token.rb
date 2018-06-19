@@ -2,9 +2,9 @@ class JsonWebToken
   # secret to encode and decode token
   HMAC_SECRET = "5a37811464e7d378488b0f073e2193b093682e4e21f5d6f3ae0a4e1781e61a351fdc878a843424e81c73fb484a40d23f92c8dafac4870e74ede6e5e174423010"
 
-  def self.encode(payload, exp = 24.hours.from_now)
+  def self.encode(payload)
     # set expiry to 24 hours from creation time
-    payload[:exp] = exp.to_i
+    #payload[:exp] = exp.to_i
     # sign token with application secret
     JWT.encode(payload, HMAC_SECRET)
   end

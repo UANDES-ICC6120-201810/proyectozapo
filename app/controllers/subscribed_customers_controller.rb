@@ -28,6 +28,10 @@ class SubscribedCustomersController < ApplicationController
 
     respond_to do |format|
       if @subscribed_customer.save
+        subscribed_customer_id = @subscribed_customer.id
+        auth_token = AuthenticateUserClient.new(subscribed_customer_id).call
+        @subscribed_customer.token = auth_token
+        @subscribed_customer.save
         format.html { redirect_to @subscribed_customer, notice: 'Subscribed customer was successfully created.' }
         format.json { render :show, status: :created, location: @subscribed_customer }
       else

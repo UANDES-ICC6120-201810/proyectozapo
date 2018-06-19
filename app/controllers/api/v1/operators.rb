@@ -3,6 +3,8 @@ module API
   module V1
     class Operators < Grape::API
       include API::V1::Defaults
+      #Auth
+      before {user_client_logger}
       resource :operators do
         desc "Return all operators"
         get "", root: :operators do

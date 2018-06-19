@@ -28,7 +28,7 @@ module API
 
           def user_client_logger
             begin
-              user_client = AuthorizeApiRequest.new(headers).user_client_call[:user]
+              user_client = AuthorizeApiRequest.new(headers).user_client_call[:user_client]
             rescue
               ExceptionHandler
               error!('Not Authorized', 401)

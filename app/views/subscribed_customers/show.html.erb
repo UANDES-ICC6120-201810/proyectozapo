@@ -15,5 +15,10 @@
   <%= @subscribed_customer.description %>
 </p>
 
+<p>
+  <strong>Token:</strong>
+  <%= @subscribed_customer.token %>
+</p>
+
 <%= link_to 'Edit', edit_subscribed_customer_path(@subscribed_customer) %> |
 <%= link_to 'Back', subscribed_customers_path %>

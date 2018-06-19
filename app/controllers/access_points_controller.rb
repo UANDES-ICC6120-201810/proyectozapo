@@ -38,9 +38,8 @@ class AccessPointsController < ApplicationController
     @access_point = AccessPoint.new(access_point_params)
     respond_to do |format|
       if @access_point.save
-        access_point_ip = access_point_params[:ip]
-        access_point_password = access_point_params[:password]
-        auth_token = AuthenticateAccessPoint.new(access_point_ip, access_point_password).call
+        bus_stop = BusStop.find(access_point_params[:bus_stop_id])
+        auth_token = AuthenticateAccessPoint.new(bus_stop.code).call
         @access_point.token = auth_token
         @access_point.save
         format.html { redirect_to @access_point, notice: 'Access point was successfully created.' }

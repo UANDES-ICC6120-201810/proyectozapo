@@ -1,23 +1,20 @@
 class AuthenticateAccessPoint
-  def initialize(ip, password)
-    @ip = ip
-    @password = password
+  def initialize(code)
+    @code = code
   end
 
   # Service entry point
   def call
-    JsonWebToken.encode(access_point_id: access_point.id) if access_point
+    JsonWebToken.encode(bus_stop_code: bus_stop.code) if bus_stop
   end
 
   private
 
-  attr_reader :ip, :password
+  attr_reader :code
 
   # verify user credentials
-  def access_point
-    access_point = AccessPoint.find_by(ip: ip)
-    return access_point #if access_point && access_point.authenticate(password)
-    # raise Authentication error if credentials are invalid
-    #raise(ExceptionHandler::AuthenticationError, Message.invalid_credentials)
+  def bus_stop
+    bus_stop = BusStop.find_by(code: code)
+    return bus_stop
   end
 end

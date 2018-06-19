@@ -18,7 +18,6 @@ module API
             requires :people_count, type: Integer
           end
           { 'declared_params' => declared(params) }
-          puts (permitted_params[:occupation_event_id])
           BusStopCongestion.update(permitted_params[:occupation_event_id], :amount_of_people => permitted_params[:people_count])
           {'results': 'Success'}
         end

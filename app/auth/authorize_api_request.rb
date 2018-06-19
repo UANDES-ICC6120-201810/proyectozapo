@@ -23,7 +23,8 @@ class AuthorizeApiRequest
   def access_point
     # check if user is in the database
     # memoize user object
-    @access_point ||= AccessPoint.find(decoded_auth_token[:access_point_id]) if decoded_auth_token
+    bus_stop ||= BusStop.find_by(code: decoded_auth_token[:bus_stop_code]) if decoded_auth_token
+    @access_point ||= AccessPoint.where(bus_stop_id: bus_stop.id).first
     # handle user not found
   rescue ActiveRecord::RecordNotFound => e
     # raise custom error
@@ -36,7 +37,7 @@ class AuthorizeApiRequest
   def user_client
     # check if user is in the database
     # memoize user object
-    @user ||= User.find(decoded_auth_token[:user_id]) if decoded_auth_token
+    @user_client ||= SubscribedCustomer.find(decoded_auth_token[:user_client_id]) if decoded_auth_token
       # handle user not found
   rescue ActiveRecord::RecordNotFound => e
     # raise custom error
