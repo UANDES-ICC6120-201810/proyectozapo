@@ -12,7 +12,7 @@ class AuthorizeApiRequest
 
   def user_client_call
     {
-        user: user_client
+        user_client: user_client
     }
   end
 
