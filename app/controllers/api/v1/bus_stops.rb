@@ -3,11 +3,11 @@ module API
     class BusStops < Grape::API
       include API::V1::Defaults
       #Auth
-      before {access_point_logger}
+      before {user_client_logger}
       resource :bus_stops do
-        desc "All bus stops codes"
+        desc "Returns a list with the codes of the services to which the current user can request information"
         get "", root: :bus_stops do
-          BusStop.all
+          AccessGroupBusStop.includes(:bus_stop).where(access_group_id: @current_user.access_group_id)
         end
       end
     end
