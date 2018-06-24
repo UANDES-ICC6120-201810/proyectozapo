@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
   resources :access_points
   resources :file_to_updates
+  resources :operators
   resources :file_packages do
     get 'file_managements/files_for_file_package'
     post 'file_managements/update_files_for_file_package'
