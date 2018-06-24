@@ -1,5 +1,5 @@
 class AccessGroupsController < ApplicationController
-  before_action :set_access_group, only: [:show, :edit, :update, :destroy]
+  before_action :set_access_group, :set_access_group_bus_stop, :set_access_group_service, only: [:show, :edit, :update, :destroy]
 
   # GET /access_groups
   # GET /access_groups.json
@@ -53,6 +53,14 @@ class AccessGroupsController < ApplicationController
   # DELETE /access_groups/1
   # DELETE /access_groups/1.json
   def destroy
+    accessGroupBusStop = @access_group_bus_stop.where(access_group_id: params[:id])
+    accessGroupService = @access_group_service.where(access_group_id: params[:id])
+    accessGroupBusStop.each do |busStop|
+      busStop.destroy
+    end
+    accessGroupService.each do |service|
+      service.destroy
+    end
     @access_group.destroy
     respond_to do |format|
       format.html { redirect_to access_groups_url, notice: 'Access group was successfully destroyed.' }
@@ -62,11 +70,17 @@ class AccessGroupsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_access_group_service
+      @access_group_service = AccessGroupService.all
+      end
+    def set_access_group_bus_stop
+      @access_group_bus_stop = AccessGroupBusStop.all
+    end
     def set_access_group
       @access_group = AccessGroup.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+  # Never trust parameters from the scary internet, only allow the white list through.
     def access_group_params
       params.require(:access_group).permit(:name, :description)
     end

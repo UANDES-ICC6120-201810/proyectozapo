@@ -16,11 +16,14 @@ module API
         desc "Information captured in the control point of the congestion"
         post "", root: :bus_stop_congestions do
           { 'declared_params' => declared(params) }
+          event_time = permitted_params[:source_filename][0..-5]
+          event_time = DateTime.strptime(event_time, "%Y%m%d%H%M")
           bus_stop_congestion = BusStopCongestion.new(image_endpoint_source: permitted_params[:source_endpoint],
                                                       image_bucket_source: permitted_params[:source_bucket],
                                                       image_name: permitted_params[:source_filename],
                                                       image_folder_source: permitted_params[:source_folder],
-                                                      bus_stop_id: @current_access_point.bus_stop_id)
+                                                      bus_stop_id: @current_access_point.bus_stop_id,
+                                                      event_time: event_time)
           bus_stop_congestion.save
           make_post_req(permitted_params[:source_endpoint], permitted_params[:source_bucket], permitted_params[:source_folder], permitted_params[:source_filename], bus_stop_congestion.id)
           {'results': 'event added'}
