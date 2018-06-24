@@ -29,7 +29,7 @@ module API
           bus_stops = BusStopService.select(:bus_stop_id).map(&:bus_stop_id).uniq
           bus_stops.each do |bus_stop|
             last_capture = BusStopService.where(bus_stop_id: bus_stop).maximum('captured_at')
-            BusStopService.where('bus_stop_id = ?  AND captured_at < ?', bus_stop ,last_capture).update_all(active: false)
+            BusStopService.where('bus_stop_id = ?  AND captured_at < ?', bus_stop ,last_capture).delete_all
           end
           {'results': 'estimation added'}
         end
