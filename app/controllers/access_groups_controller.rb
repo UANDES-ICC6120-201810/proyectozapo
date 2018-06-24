@@ -25,7 +25,6 @@ class AccessGroupsController < ApplicationController
   # POST /access_groups.json
   def create
     @access_group = AccessGroup.new(access_group_params)
-
     respond_to do |format|
       if @access_group.save
         format.html { redirect_to @access_group, notice: 'Access group was successfully created.' }
