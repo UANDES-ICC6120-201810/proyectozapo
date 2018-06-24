@@ -1,65 +1,74 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Zapo</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width", initial-scale="1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="/home/index.html ">Zapo</a>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto"></ul>
-        <ul class="nav justify-content-end">
-          <% if user_signed_in? %>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-              <li><a tabindex="-1" href="#">Action</a></li>
-              <li><a tabindex="-1" href="#">Another action</a></li>
-              <li><a tabindex="-1" href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a tabindex="-1" href="#">Separated link</a></li>
-            </ul>
-            <li>
-              <span style="display:inline-block; width: 150px;"><%= link_to('Customers', subscribed_customers_path) %></span>
-            </li>
-            <li>
-              <span style="display:inline-block; width: 150px;"><%= link_to('Services', services_path) %></span>
-            </li>
-            <li>
-              <span style="display:inline-block; width: 150px;"><%= link_to('Access Group', access_groups_path) %></span>
-            </li>
-            <li>
-              <span style="display:inline-block; width: 150px;"><%= link_to('Access Point', access_points_path) %></span>
-            </li>
-            <li>
-              <span style="display:inline-block; width: 150px;"><%= link_to('Bus Stop', bus_stops_path) %></span>
-            </li>
-            <li>
-              <span style="display:inline-block; width: 150px;"><%= link_to('File to Update', file_to_updates_path) %></span>
-            </li>
-            <li>
-              <span style="display:inline-block; width: 150px;"><%= link_to('File Package', file_packages_path) %></span>
-            </li>
-            <li>
-              <span style="display:inline-block; width: 90px;"><%= link_to('Edit User', edit_user_registration_path) %></span>
-            </li>
-            <li>
-              <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
-    </nav>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <div class="row">
-      <div class="col-1"></div>
-      <div class="col-11"><%= yield %></div>
-    </div>
-  </body>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+  <title>Zapo</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body data-turbolinks="false">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/home/index.html"><img src="/assets/zapo_logo.png" width="30" height="30" alt=""> Zapo</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <a class="nav-link" href="/subscribed_customers/"><button class="btn btn-sm btn-outline-secondary" type="button">Customers</button></a>
+        </li>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/access_points/"><button class="btn btn-sm btn-outline-secondary" type="button">Access Points</button></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/access_groups/"><button class="btn btn-sm btn-outline-secondary" type="button">Access Groups</button></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/services/"><button class="btn btn-sm btn-outline-secondary" type="button">Services</button></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/bus_stops/"><button class="btn btn-sm btn-outline-secondary" type="button">Bus Stops</button></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/file_to_updates/"><button class="btn btn-sm btn-outline-secondary" type="button">File to Updates</button></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/file_packages/"><button class="btn btn-sm btn-outline-secondary" type="button">File Packages</button></a>
+        </li>
+      <% end %>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><button class="btn btn-sm btn btn-primary" type="button">Administar Usuarios</button></a>
+        </li>
+        <li>
+          <a class="nav-link" href="#"><%= button_to('Logout', destroy_user_session_path, method: :delete, class:"btn btn-sm btn-danger") %></a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-11"><%= yield %></div>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</body>
 </html>
