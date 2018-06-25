@@ -83,7 +83,7 @@ class AccessPointsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def access_point_params
-      params.require(:access_point).permit(:bus_stop_id, :mac, :ip, :status, :token, :last_message, :password, :password_confirmation)
-      #params.permit(:bus_stop_id, :mac, :ip, :status, :token, :last_message, :password, :password_confirmation)
+      params.require(:access_point).permit(:bus_stop_id, :mac, :ip, :status, :token, :last_connection, :password, :password_confirmation)
+      #params.permit(:bus_stop_id, :mac, :ip, :status, :token, :last_connection, :password, :password_confirmation)
     end
 end
