@@ -1,2 +1,1125 @@
-<h1>Info#api_info</h1>
-<p>Find me in app/views/info/api_info.html.erb</p>
+<html>
+
+<head>
+  <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+  <meta name=Generator content="Microsoft Word 15 (filtered)">
+  <style>
+    <!--
+    /* Font Definitions */
+    @font-face
+    {font-family:"Cambria Math";
+      panose-1:2 4 5 3 5 4 6 3 2 4;}
+    /* Style Definitions */
+    p.MsoNormal, li.MsoNormal, div.MsoNormal
+    {margin:0cm;
+      margin-bottom:.0001pt;
+      line-height:115%;
+      font-size:11.0pt;
+      font-family:"Arial",sans-serif;}
+    h1
+    {margin-top:20.0pt;
+      margin-right:0cm;
+      margin-bottom:6.0pt;
+      margin-left:0cm;
+      line-height:115%;
+      page-break-after:avoid;
+      font-size:20.0pt;
+      font-family:"Arial",sans-serif;
+      font-weight:normal;}
+    h2
+    {margin-top:18.0pt;
+      margin-right:0cm;
+      margin-bottom:6.0pt;
+      margin-left:0cm;
+      line-height:115%;
+      page-break-after:avoid;
+      font-size:16.0pt;
+      font-family:"Arial",sans-serif;
+      font-weight:normal;}
+    h3
+    {margin-top:16.0pt;
+      margin-right:0cm;
+      margin-bottom:4.0pt;
+      margin-left:0cm;
+      line-height:115%;
+      page-break-after:avoid;
+      font-size:14.0pt;
+      font-family:"Arial",sans-serif;
+      color:#434343;
+      font-weight:normal;}
+    h4
+    {margin-top:14.0pt;
+      margin-right:0cm;
+      margin-bottom:4.0pt;
+      margin-left:0cm;
+      line-height:115%;
+      page-break-after:avoid;
+      font-size:12.0pt;
+      font-family:"Arial",sans-serif;
+      color:#666666;
+      font-weight:normal;}
+    h5
+    {margin-top:12.0pt;
+      margin-right:0cm;
+      margin-bottom:4.0pt;
+      margin-left:0cm;
+      line-height:115%;
+      page-break-after:avoid;
+      font-size:11.0pt;
+      font-family:"Arial",sans-serif;
+      color:#666666;
+      font-weight:normal;}
+    h6
+    {margin-top:12.0pt;
+      margin-right:0cm;
+      margin-bottom:4.0pt;
+      margin-left:0cm;
+      line-height:115%;
+      page-break-after:avoid;
+      font-size:11.0pt;
+      font-family:"Arial",sans-serif;
+      color:#666666;
+      font-weight:normal;
+      font-style:italic;}
+    p.MsoTitle, li.MsoTitle, div.MsoTitle
+    {margin-top:0cm;
+      margin-right:0cm;
+      margin-bottom:3.0pt;
+      margin-left:0cm;
+      line-height:115%;
+      page-break-after:avoid;
+      font-size:26.0pt;
+      font-family:"Arial",sans-serif;}
+    p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+    {margin-top:0cm;
+      margin-right:0cm;
+      margin-bottom:16.0pt;
+      margin-left:0cm;
+      line-height:115%;
+      page-break-after:avoid;
+      font-size:15.0pt;
+      font-family:"Arial",sans-serif;
+      color:#666666;}
+    .MsoChpDefault
+    {font-family:"Arial",sans-serif;}
+    .MsoPapDefault
+    {line-height:115%;}
+    @page WordSection1
+    {size:595.45pt 841.7pt;
+      margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+    div.WordSection1
+    {page:WordSection1;}
+    /* List Definitions */
+    ol
+    {margin-bottom:0cm;}
+    ul
+    {margin-bottom:0cm;}
+    -->
+  </style>
+
+</head>
+
+<body lang=ES-CL>
+
+<div class=WordSection1>
+
+  <h1 style='text-indent:36.0pt'><span lang=es>Documentación de API</span></h1>
+
+  <p class=MsoNormal><span lang=es>&nbsp;</span></p>
+
+  <p class=MsoNormal><span lang=es>            Este es un servicio web liviano,
+(interfaz REST), que proporciona una manera fácil de acceder a la información.<br>
+            Una API (interfaz de programación de aplicaciones) es un protocolo
+destinado a ser utilizado como interfaz por los componentes de software para
+comunicarse entre sí.</span></p>
+
+  <p class=MsoNormal><span lang=es>&nbsp;</span></p>
+
+  <p class=MsoNormalCxSpMiddle style='margin-left:36.0pt;text-align:justify;
+      text-indent:-18.0pt'><span lang=es>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><u><span lang=es style='color:#1155CC'><a href="#_2l92zr5ekrvc"><span
+    style='color:#1155CC'>Información</span></a></span></u></p>
+
+  <p class=MsoNormalCxSpMiddle style='margin-left:36.0pt;text-align:justify;
+      text-indent:-18.0pt'><span lang=es>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><u><span lang=es style='color:#1155CC'><a href="#_n2mf4xlqvoca"><span
+    style='color:#1155CC'>Lista de Servicios</span></a></span></u></p>
+
+  <p class=MsoNormalCxSpMiddle style='margin-left:36.0pt;text-align:justify;
+      text-indent:-18.0pt'><span lang=es>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><u><span lang=es style='color:#1155CC'><a href="#_g59y7p4h88ha"><span
+    style='color:#1155CC'>Lista de Paraderos</span></a></span></u></p>
+
+  <p class=MsoNormalCxSpMiddle style='margin-left:36.0pt;text-align:justify;
+      text-indent:-18.0pt'><span lang=es>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><u><span lang=es style='color:#1155CC'><a href="#_p36flaiax25b"><span
+    style='color:#1155CC'>Cantidad de Pasajeros</span></a></span></u></p>
+
+  <p class=MsoNormalCxSpMiddle style='margin-left:36.0pt;text-align:justify;
+      text-indent:-18.0pt'><span lang=es>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><u><span lang=es style='color:#1155CC'><a href="#_o7m891ls32ts"><span
+    style='color:#1155CC'>Eventos de Buses</span></a></span></u></p>
+
+  <p class=MsoNormalCxSpLast style='margin-left:36.0pt;text-align:justify;
+      text-indent:-18.0pt'><span lang=es>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><u><span lang=es style='color:#1155CC'><a href="#_jrilwhwk4ewv"><span
+    style='color:#1155CC'>Registro de solicitudes de tiempo de espera</span></a></span></u></p>
+
+  <h2><a name="_xxqrbquwdo82"></a><span lang=es style='font-size:11.0pt;
+      line-height:115%'>Para todos los endpoints se necesita una clave de
+autorización, el cual va en formato JWT en el header.</span></h2>
+
+  <p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt'><span
+    lang=es>&#9679;<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=es>Ejemplo: ‘Authorization’: ‘Bearer
+fc3RvcF9j.b2RlIjoiUEMfQ.lz7417pzpmpmzP0YkqC’</span></p>
+
+  <h2><a name="_7ufmjq6u7u2m"></a><span lang=es>&nbsp;</span></h2>
+
+  <h2><a name="_2l92zr5ekrvc"></a><span lang=es>Información</span></h2>
+
+  <p class=MsoNormal><span lang=es>HTTP GET</span></p>
+
+  <table class=a border=1 cellspacing=0 cellpadding=0 width=600 style='margin-left:
+      5.0pt;border-collapse:collapse;border:none'>
+    <tr>
+      <td width=157 valign=top style='width:117.75pt;border:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Endpoint</span></b></p>
+      </td>
+      <td width=443 valign=top style='width:332.25pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Descripción</span></b></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=157 valign=top style='width:117.75pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>v1/info</span></p>
+      </td>
+      <td width=443 valign=top style='width:332.25pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>Retorna la URL
+  donde se encuentra la información sobre el uso de la API y la lista con los
+  endpoints disponibles para terceros</span></p>
+      </td>
+    </tr>
+  </table>
+
+  <h2><a name="_sr7iee7q64jo"></a><span lang=es style='font-size:11.0pt;
+      line-height:115%'>Ejemplo</span></h2>
+
+  <table class=a0 border=1 cellspacing=0 cellpadding=0 width=600
+         style='margin-left:5.0pt;border-collapse:collapse;border:none'>
+    <tr>
+      <td width=236 valign=top style='width:177.0pt;border:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Solicitud</span></b></p>
+      </td>
+      <td width=364 valign=top style='width:273.0pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Respuesta</span></b></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=236 valign=top style='width:177.0pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>proyectozapo.herokuapp.com/api/v1/info</span></p>
+      </td>
+      <td width=364 valign=top style='width:273.0pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>{</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>    &quot;API
+  info&quot;: &quot;<u><span style='color:#1155CC'><a
+          href="http://proyectozapo.herokuapp.com/info/api_info"><span
+          style='color:#1155CC'>http://proyectozapo.herokuapp.com/info/api_info</span></a></span></u>&quot;</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>}</span></p>
+      </td>
+    </tr>
+  </table>
+
+  <h2><a name="_o6t0bad0vvf"></a><a name="_n2mf4xlqvoca"></a><span lang=es>&nbsp;</span></h2>
+
+  <h2><span lang=es>Lista de Servicios</span></h2>
+
+  <p class=MsoNormal><span lang=es>HTTP GET</span></p>
+
+  <table class=a1 border=1 cellspacing=0 cellpadding=0 width=600
+         style='margin-left:5.0pt;border-collapse:collapse;border:none'>
+    <tr>
+      <td width=157 valign=top style='width:117.75pt;border:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Endpoint</span></b></p>
+      </td>
+      <td width=443 valign=top style='width:332.25pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Descripción</span></b></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=157 valign=top style='width:117.75pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>v1/services</span></p>
+      </td>
+      <td width=443 valign=top style='width:332.25pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>Retorna una lista
+  con los códigos de los servicios a los que la actual entidad puede solicitar
+  información.</span></p>
+      </td>
+    </tr>
+  </table>
+
+  <h2><a name="_j3v75yx34und"></a><span lang=es style='font-size:11.0pt;
+      line-height:115%'>Ejemplo</span></h2>
+
+  <table class=a2 border=1 cellspacing=0 cellpadding=0 width=600
+         style='margin-left:5.0pt;border-collapse:collapse;border:none'>
+    <tr>
+      <td width=236 valign=top style='width:177.0pt;border:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Solicitud</span></b></p>
+      </td>
+      <td width=364 valign=top style='width:273.0pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Respuesta</span></b></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=236 valign=top style='width:177.0pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>proyectozapo.herokuapp.com/api/v1/services</span></p>
+      </td>
+      <td width=364 valign=top style='width:273.0pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>[</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>    {</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>       
+  &quot;route&quot;: &quot;C17&quot;</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>    },</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>    {</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>       
+  &quot;route&quot;: &quot;401&quot;</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>    },</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>    {</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>       
+  &quot;route&quot;: &quot;C05&quot;</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>    </span><span
+          lang=es>}</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>]</span></p>
+      </td>
+    </tr>
+  </table>
+
+  <h2><a name="_au9ey0h254m6"></a><span lang=es>&nbsp;</span></h2>
+
+  <h2><a name="_g59y7p4h88ha"></a><span lang=es>Lista de Paraderos</span></h2>
+
+  <p class=MsoNormal><span lang=es>HTTP GET</span></p>
+
+  <table class=a3 border=1 cellspacing=0 cellpadding=0 width=600
+         style='margin-left:5.0pt;border-collapse:collapse;border:none'>
+    <tr>
+      <td width=193 valign=top style='width:144.75pt;border:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Endpoint</span></b></p>
+      </td>
+      <td width=407 valign=top style='width:305.25pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Descripción</span></b></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=193 valign=top style='width:144.75pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>v1/bus_stops</span></p>
+      </td>
+      <td width=407 valign=top style='width:305.25pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>Retorna una lista
+  con los códigos de los paraderos a los cuales la actual entidad puede
+  solicitar información.</span></p>
+      </td>
+    </tr>
+  </table>
+
+  <h2><a name="_qa4eyhap09wb"></a><span lang=es style='font-size:11.0pt;
+      line-height:115%'>Ejemplo</span></h2>
+
+  <table class=a4 border=1 cellspacing=0 cellpadding=0 width=600
+         style='margin-left:5.0pt;border-collapse:collapse;border:none'>
+    <tr>
+      <td width=236 valign=top style='width:177.0pt;border:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Solicitud</span></b></p>
+      </td>
+      <td width=364 valign=top style='width:273.0pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Respuesta</span></b></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=236 valign=top style='width:177.0pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>proyectozapo.herokuapp.com/api/v1/bus_stops</span></p>
+      </td>
+      <td width=364 valign=top style='width:273.0pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>[</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>    {</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>       
+  &quot;bus_stop&quot;: &quot;PC123&quot;</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>    },</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>    {</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>       
+  &quot;bus_stop&quot;: &quot;PC954&quot;</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>    </span><span
+          lang=es>}</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>]</span></p>
+      </td>
+    </tr>
+  </table>
+
+  <h2><a name="_p36flaiax25b"></a><span lang=es>&nbsp;</span></h2>
+
+  <h2><span lang=es>Cantidad de Pasajeros</span></h2>
+
+  <p class=MsoNormal><span lang=es>HTTP GET</span></p>
+
+  <table class=a5 border=1 cellspacing=0 cellpadding=0 width=600
+         style='margin-left:5.0pt;border-collapse:collapse;border:none'>
+    <tr>
+      <td width=193 valign=top style='width:144.75pt;border:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Endpoint</span></b></p>
+      </td>
+      <td width=407 valign=top style='width:305.25pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Descripción</span></b></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=193 valign=top style='width:144.75pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>v1/amount_of_passengers</span></p>
+      </td>
+      <td width=407 valign=top style='width:305.25pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>Retorna
+  información sobre la ocupación de los usuarios que se encuentran en los
+  paraderos solicitados.</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>Las fechas
+  ingresadas deben tener un rango de a lo más 7 días.</span></p>
+      </td>
+    </tr>
+  </table>
+
+  <p class=MsoNormal><span lang=es>&nbsp;</span></p>
+
+  <p class=MsoNormal><span lang=es>Parámetros</span></p>
+
+  <table class=a6 border=1 cellspacing=0 cellpadding=0 width=600
+         style='margin-left:5.0pt;border-collapse:collapse;border:none'>
+    <tr style='height:24.0pt'>
+      <td width=76 valign=top style='width:57.0pt;border:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt;height:24.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Nombre</span></b></p>
+      </td>
+      <td width=87 valign=top style='width:65.25pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt;height:24.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Requerido</span></b></p>
+      </td>
+      <td width=79 valign=top style='width:59.25pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt;height:24.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Tipo</span></b></p>
+      </td>
+      <td width=116 valign=top style='width:87.0pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt;height:24.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Formato</span></b></p>
+      </td>
+      <td width=242 valign=top style='width:181.5pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt;height:24.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Descripción</span></b></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=76 valign=top style='width:57.0pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>bus_stop</span></p>
+      </td>
+      <td width=87 valign=top style='width:65.25pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>si</span></p>
+      </td>
+      <td width=79 valign=top style='width:59.25pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>string</span></p>
+      </td>
+      <td width=116 valign=top style='width:87.0pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>“PC123”</span></p>
+      </td>
+      <td width=242 valign=top style='width:181.5pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>Código del
+  paradero del cual se quiere obtener información sobre la ocupación.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=76 valign=top style='width:57.0pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>start</span></p>
+      </td>
+      <td width=87 valign=top style='width:65.25pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>si</span></p>
+      </td>
+      <td width=79 valign=top style='width:59.25pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>DateTime</span></p>
+      </td>
+      <td width=116 valign=top style='width:87.0pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>yyyy-mm-dd
+  hh:mm</span></p>
+      </td>
+      <td width=242 valign=top style='width:181.5pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>Fecha de inicio
+  para el filtro de rango de fechas.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=76 valign=top style='width:57.0pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>end</span></p>
+      </td>
+      <td width=87 valign=top style='width:65.25pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>si</span></p>
+      </td>
+      <td width=79 valign=top style='width:59.25pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>DateTime</span></p>
+      </td>
+      <td width=116 valign=top style='width:87.0pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>yyyy-mm-dd
+  hh:mm</span></p>
+      </td>
+      <td width=242 valign=top style='width:181.5pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>Fecha de término
+  para el filtro de rango de fechas.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=76 valign=top style='width:57.0pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>order_by</span></p>
+      </td>
+      <td width=87 valign=top style='width:65.25pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>no</span></p>
+      </td>
+      <td width=79 valign=top style='width:59.25pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>String</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>&nbsp;</span></p>
+      </td>
+      <td width=116 valign=top style='width:87.0pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>“desc” o “asc”</span></p>
+      </td>
+      <td width=242 valign=top style='width:181.5pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>Ordena los
+  resultados por orden ascendente o descendente en el tiempo</span></p>
+      </td>
+    </tr>
+  </table>
+
+  <h2><a name="_g9uoj75mlmfz"></a><span lang=es style='font-size:11.0pt;
+      line-height:115%'>Ejemplo</span></h2>
+
+  <table class=a7 border=1 cellspacing=0 cellpadding=0 width=600
+         style='margin-left:5.0pt;border-collapse:collapse;border:none'>
+    <tr>
+      <td width=254 valign=top style='width:190.5pt;border:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Solicitud</span></b></p>
+      </td>
+      <td width=346 valign=top style='width:259.5pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Respuesta</span></b></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=254 valign=top style='width:190.5pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>proyectozapo.herokuapp.com/api/v1/amount_of_passengers?bus_stop=PC123&amp;start=2018-06-14
+  6:00&amp;end=2018-06-19 22:00</span></p>
+      </td>
+      <td width=346 valign=top style='width:259.5pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>[</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>    {</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>       
+  &quot;date&quot;: &quot;2018-06-22 23:20:48&quot;,</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>       
+  &quot;amount&quot;: &quot;13&quot;</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>    },</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>    {</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>       
+  &quot;date&quot;: &quot;2018-06-22 23:20:51&quot;,</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>       
+  &quot;amount&quot;: &quot;5&quot;</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>    },</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>    {</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>       
+  &quot;date&quot;: &quot;2018-06-22 23:20:54&quot;,</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>        </span><span
+          lang=es>&quot;amount&quot;: &quot;7&quot;</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>    }</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>]</span></p>
+      </td>
+    </tr>
+  </table>
+
+  <h2><a name="_ah76913hx2r2"></a><a name="_o7m891ls32ts"></a><span lang=es>&nbsp;</span></h2>
+
+  <h2><span lang=es>Eventos de Buses</span></h2>
+
+  <p class=MsoNormal><span lang=es>HTTP GET</span></p>
+
+  <table class=a8 border=1 cellspacing=0 cellpadding=0 width=600
+         style='margin-left:5.0pt;border-collapse:collapse;border:none'>
+    <tr>
+      <td width=195 valign=top style='width:146.25pt;border:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Endpoint</span></b></p>
+      </td>
+      <td width=405 valign=top style='width:303.75pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Descripción</span></b></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=195 valign=top style='width:146.25pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>v1/bus_events</span></p>
+      </td>
+      <td width=405 valign=top style='width:303.75pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>Retorna
+  información sobre los eventos de uno o más buses en un rango de fechas.</span></p>
+      </td>
+    </tr>
+  </table>
+
+  <p class=MsoNormal><span lang=es>&nbsp;</span></p>
+
+  <p class=MsoNormal><span lang=es>Parámetros</span></p>
+
+  <table class=a9 border=1 cellspacing=0 cellpadding=0 width=601
+         style='margin-left:5.0pt;border-collapse:collapse;border:none'>
+    <tr style='height:24.0pt'>
+      <td width=88 valign=top style='width:66.0pt;border:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt;height:24.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Nombre</span></b></p>
+      </td>
+      <td width=90 valign=top style='width:67.5pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt;height:24.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Requerido</span></b></p>
+      </td>
+      <td width=81 valign=top style='width:60.75pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt;height:24.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Tipo</span></b></p>
+      </td>
+      <td width=104 valign=top style='width:78.0pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt;height:24.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Formato</span></b></p>
+      </td>
+      <td width=238 valign=top style='width:178.5pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt;height:24.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Descripción</span></b></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=88 valign=top style='width:66.0pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>bus</span></p>
+      </td>
+      <td width=90 valign=top style='width:67.5pt;border-top:none;border-left:none;
+          border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>no</span></p>
+      </td>
+      <td width=81 valign=top style='width:60.75pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>String</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>&nbsp;</span></p>
+      </td>
+      <td width=104 valign=top style='width:78.0pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>“AB-1234” o</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>“ABCD-12”</span></p>
+      </td>
+      <td width=238 valign=top style='width:178.5pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>Patente del bus
+  del cual se quiere obtener los eventos</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=88 valign=top style='width:66.0pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>bus_stops</span></p>
+      </td>
+      <td width=90 valign=top style='width:67.5pt;border-top:none;border-left:none;
+          border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>si</span></p>
+      </td>
+      <td width=81 valign=top style='width:60.75pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>Json </span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>&nbsp;</span></p>
+      </td>
+      <td width=104 valign=top style='width:78.0pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>{&quot;data&quot;:
+  [&quot;PC954&quot;, &quot;PC123&quot;, &quot;PC955&quot;]}</span></p>
+      </td>
+      <td width=238 valign=top style='width:178.5pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>Json con una
+  lista de códigos de los paraderos de los cuales se quiere obtener los eventos
+  de los buses.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=88 valign=top style='width:66.0pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>start</span></p>
+      </td>
+      <td width=90 valign=top style='width:67.5pt;border-top:none;border-left:none;
+          border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>si</span></p>
+      </td>
+      <td width=81 valign=top style='width:60.75pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>DateTime</span></p>
+      </td>
+      <td width=104 valign=top style='width:78.0pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>yyyy-mm-dd
+  hh:mm</span></p>
+      </td>
+      <td width=238 valign=top style='width:178.5pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>Fecha de inicio
+  para el filtro de rango de fechas.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=88 valign=top style='width:66.0pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>end</span></p>
+      </td>
+      <td width=90 valign=top style='width:67.5pt;border-top:none;border-left:none;
+          border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>si</span></p>
+      </td>
+      <td width=81 valign=top style='width:60.75pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>DateTime</span></p>
+      </td>
+      <td width=104 valign=top style='width:78.0pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>yyyy-mm-dd
+  hh:mm</span></p>
+      </td>
+      <td width=238 valign=top style='width:178.5pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>Fecha de término
+  para el filtro de rango de fechas.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=88 valign=top style='width:66.0pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>order_by</span></p>
+      </td>
+      <td width=90 valign=top style='width:67.5pt;border-top:none;border-left:none;
+          border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>no</span></p>
+      </td>
+      <td width=81 valign=top style='width:60.75pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>String</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>&nbsp;</span></p>
+      </td>
+      <td width=104 valign=top style='width:78.0pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>“desc” o “asc”</span></p>
+      </td>
+      <td width=238 valign=top style='width:178.5pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>Ordena los
+  resultados por orden ascendente o descendente en el tiempo</span></p>
+      </td>
+    </tr>
+  </table>
+
+  <h2><a name="_rbt1tlp876e8"></a><span lang=es style='font-size:11.0pt;
+      line-height:115%'>Ejemplo</span></h2>
+
+  <table class=aa border=1 cellspacing=0 cellpadding=0 width=600
+         style='margin-left:5.0pt;border-collapse:collapse;border:none'>
+    <tr>
+      <td width=240 valign=top style='width:180.0pt;border:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Solicitud</span></b></p>
+      </td>
+      <td width=360 valign=top style='width:270.0pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Respuesta</span></b></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=240 valign=top style='width:180.0pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>proyectozapo.herokuapp.com/api/v1/bus_events?bus_stops={&quot;data&quot;:[&quot;PC954&quot;,&quot;PC123&quot;,&quot;PC955&quot;]}&amp;start=2018-06-03
+  6:00&amp;end=2018-06-05 23:59&amp;order_by=asc</span></p>
+      </td>
+      <td width=360 valign=top style='width:270.0pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>[</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>            {</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>            &quot;bus_stop&quot;:
+  &quot;PC123&quot;,</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>            &quot;plate_number&quot;:
+  &quot;ZH-2394&quot;,</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>            &quot;route_code&quot;:
+  C02,</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>            &quot;event_time&quot;:
+  &quot;2018-06-03 09:55:46&quot;,</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>            &quot;bus_speed&quot;:
+  &quot;1&quot;</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>            },</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>            {</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>            &quot;bus_stop&quot;:
+  &quot;PC123&quot;,</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>            &quot;plate_number&quot;:
+  &quot;BBCD-32&quot;,</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>            &quot;route_code&quot;:
+  401,</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>            </span><span
+          lang=es>&quot;event_time&quot;: &quot;2018-06-04 16:23:08&quot;,</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>            &quot;bus_speed&quot;:
+  &quot;0&quot;</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>            }</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>]</span></p>
+      </td>
+    </tr>
+  </table>
+
+  <h2><a name="_jrilwhwk4ewv"></a><span lang=es>&nbsp;</span></h2>
+
+  <h2><span lang=es>Registro de solicitudes de tiempo de espera</span></h2>
+
+  <p class=MsoNormal><span lang=es>HTTP GET</span></p>
+
+  <table class=ab border=1 cellspacing=0 cellpadding=0 width=600
+         style='margin-left:5.0pt;border-collapse:collapse;border:none'>
+    <tr>
+      <td width=252 valign=top style='width:189.0pt;border:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Endpoint</span></b></p>
+      </td>
+      <td width=348 valign=top style='width:261.0pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Descripción</span></b></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=252 valign=top style='width:189.0pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>v1/amount_of_waiting_time_queries</span></p>
+      </td>
+      <td width=348 valign=top style='width:261.0pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>Información sobre
+  las solicitudes de tiempo de espera hechas por los pasajeros en los paraderos</span></p>
+      </td>
+    </tr>
+  </table>
+
+  <p class=MsoNormal><span lang=es>&nbsp;</span></p>
+
+  <p class=MsoNormal><span lang=es>Parámetros</span></p>
+
+  <table class=ac border=1 cellspacing=0 cellpadding=0 width=601
+         style='margin-left:5.0pt;border-collapse:collapse;border:none'>
+    <tr style='height:24.0pt'>
+      <td width=88 valign=top style='width:66.0pt;border:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt;height:24.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Nombre</span></b></p>
+      </td>
+      <td width=90 valign=top style='width:67.5pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt;height:24.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Requerido</span></b></p>
+      </td>
+      <td width=81 valign=top style='width:60.75pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt;height:24.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Tipo</span></b></p>
+      </td>
+      <td width=104 valign=top style='width:78.0pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt;height:24.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Formato</span></b></p>
+      </td>
+      <td width=238 valign=top style='width:178.5pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt;height:24.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Descripción</span></b></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=88 valign=top style='width:66.0pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>route</span></p>
+      </td>
+      <td width=90 valign=top style='width:67.5pt;border-top:none;border-left:none;
+          border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>no</span></p>
+      </td>
+      <td width=81 valign=top style='width:60.75pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>String</span></p>
+      </td>
+      <td width=104 valign=top style='width:78.0pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>&quot;PC954&quot;</span></p>
+      </td>
+      <td width=238 valign=top style='width:178.5pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>Código del
+  servicio del cual se quiere obtener información</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=88 valign=top style='width:66.0pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>bus_stops</span></p>
+      </td>
+      <td width=90 valign=top style='width:67.5pt;border-top:none;border-left:none;
+          border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>si</span></p>
+      </td>
+      <td width=81 valign=top style='width:60.75pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>Json </span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>&nbsp;</span></p>
+      </td>
+      <td width=104 valign=top style='width:78.0pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>{&quot;data&quot;:
+  [&quot;PC954&quot;, &quot;PC123&quot;, &quot;PC955&quot;]}</span></p>
+      </td>
+      <td width=238 valign=top style='width:178.5pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>Json con una
+  lista de códigos de los paraderos de los cuales se quiere obtener las
+  solicitudes de tiempos de espera</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=88 valign=top style='width:66.0pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>start</span></p>
+      </td>
+      <td width=90 valign=top style='width:67.5pt;border-top:none;border-left:none;
+          border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>si</span></p>
+      </td>
+      <td width=81 valign=top style='width:60.75pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>DateTime</span></p>
+      </td>
+      <td width=104 valign=top style='width:78.0pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>yyyy-mm-dd
+  hh:mm</span></p>
+      </td>
+      <td width=238 valign=top style='width:178.5pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>Fecha de inicio
+  para el filtro de rango de fechas.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=88 valign=top style='width:66.0pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>end</span></p>
+      </td>
+      <td width=90 valign=top style='width:67.5pt;border-top:none;border-left:none;
+          border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>si</span></p>
+      </td>
+      <td width=81 valign=top style='width:60.75pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>DateTime</span></p>
+      </td>
+      <td width=104 valign=top style='width:78.0pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>yyyy-mm-dd
+  hh:mm</span></p>
+      </td>
+      <td width=238 valign=top style='width:178.5pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>Fecha de término
+  para el filtro de rango de fechas.</span></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=88 valign=top style='width:66.0pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>order_by</span></p>
+      </td>
+      <td width=90 valign=top style='width:67.5pt;border-top:none;border-left:none;
+          border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>no</span></p>
+      </td>
+      <td width=81 valign=top style='width:60.75pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>String</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>&nbsp;</span></p>
+      </td>
+      <td width=104 valign=top style='width:78.0pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>“desc” o “asc”</span></p>
+      </td>
+      <td width=238 valign=top style='width:178.5pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>Ordena los
+  resultados por orden ascendente o descendente en el tiempo</span></p>
+      </td>
+    </tr>
+  </table>
+
+  <h2><a name="_5o268tf9tbqo"></a><span lang=es style='font-size:11.0pt;
+      line-height:115%'>Ejemplo</span></h2>
+
+  <table class=ad border=1 cellspacing=0 cellpadding=0 width=600
+         style='margin-left:5.0pt;border-collapse:collapse;border:none'>
+    <tr>
+      <td width=240 valign=top style='width:180.0pt;border:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Solicitud</span></b></p>
+      </td>
+      <td width=360 valign=top style='width:270.0pt;border:solid black 1.0pt;
+          border-left:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><b><span lang=es>Respuesta</span></b></p>
+      </td>
+    </tr>
+    <tr>
+      <td width=240 valign=top style='width:180.0pt;border:solid black 1.0pt;
+          border-top:none;padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>proyectozapo.herokuapp.com/api/v1/bus_events?bus_stops={&quot;data&quot;:[&quot;PC954&quot;,&quot;PC123&quot;,&quot;PC955&quot;]}&amp;start=2018-06-03
+  6:00&amp;end=2018-06-05 23:59&amp;order_by=asc</span></p>
+      </td>
+      <td width=360 valign=top style='width:270.0pt;border-top:none;border-left:
+          none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+          padding:5.0pt 5.0pt 5.0pt 5.0pt'>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>[</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>    {</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>       
+  &quot;bus_stop&quot;: &quot;PC123&quot;,</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>       
+  &quot;plate_number&quot;: &quot;ZH-2394&quot;,</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>       
+  &quot;route_code&quot;: C02,</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>       
+  &quot;event_time&quot;: &quot;2018-06-03 09:55:46&quot;,</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>       
+  &quot;bus_speed&quot;: &quot;1&quot;</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>    },</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>    {</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>       
+  &quot;bus_stop&quot;: &quot;PC123&quot;,</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>       
+  &quot;plate_number&quot;: &quot;BBCD-32&quot;,</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>       
+  &quot;route_code&quot;: 401,</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=EN-US>        </span><span
+          lang=es>&quot;event_time&quot;: &quot;2018-06-04 16:23:08&quot;,</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>       
+  &quot;bus_speed&quot;: &quot;0&quot;</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>    }</span></p>
+        <p class=MsoNormal style='line-height:normal'><span lang=es>]</span></p>
+      </td>
+    </tr>
+  </table>
+
+  <p class=MsoNormal><span lang=es>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

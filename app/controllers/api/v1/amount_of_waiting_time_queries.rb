@@ -7,7 +7,7 @@ module API
       resource :amount_of_waiting_time_queries do
         desc "Return the numbers of passengers in a bus stop"
         params do
-          optional :bus, type: String
+          optional :route, type: String
           requires :bus_stops, type: JSON
           requires :start, type: DateTime
           requires :end, type: DateTime
@@ -17,15 +17,12 @@ module API
           { 'declared_params' => declared(params) }
           #Check params:
           #Check bus
-          correct_bus = false
+          correct_service = false
           access_group_services = AccessGroupService.where(access_group_id: @current_user.access_group_id)
-          bus = Vehicle.where('plate_number = ? AND is_bus = ?', params[:bus], true).first
-          if bus.present?
-            bus_service = BusService.where(vehicle_id: bus.id).first!
-            if bus_service.present?
-              if access_group_services.where(service_id: bus_service.service_id).first!.present?
-                correct_bus = true
-              end
+          service = Service.where('route_code = ? ', params[:route]).first
+          if service.present?
+            if access_group_services.where(service_id: service.id).first!.present?
+                correct_service = true
             end
           end
           #Check bus_stops
@@ -70,10 +67,10 @@ module API
               if correct_order
                 logs_index = []
                 logs = Log.where("type_of_log IN (?) AND updated_at <= ? AND updated_at >= ?", waiting_time_logs, end_date, start_date)
-                if correct_bus
+                if correct_service
                   logs.each do |log|
                     message = log.message.split('/')
-                    if bus_stops.include?(BusStop.where(code: message[0]).first.id) and bus.code == message[1]
+                    if bus_stops.include?(BusStop.where(code: message[0]).first.id) and params[:route] == message[1]
                       logs_index << log.id
                     end
                   end

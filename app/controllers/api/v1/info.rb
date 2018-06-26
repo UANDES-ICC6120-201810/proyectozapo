@@ -7,7 +7,7 @@ module API
       resource :info do
         desc "Return info of endpoints"
         get "", root: :operators do
-          redirect "https://www.youtube.com/watch?v=G1IbRujko-A"
+          {"API info": "http://proyectozapo.herokuapp.com/info/api_info"}
         end
       end
     end
