@@ -13,6 +13,8 @@ module API
       resource :occupation_event_people_count do
         desc "Information captured in the control point of the congestion"
         post "", root: :bus_stop_congestions do
+          @current_access_point.last_connection = DateTime.now.strftime("%Y-%m-%d %H:%M:%S")
+          @current_access_point.save
           params do
             requires :occupation_event_id, type: Integer
             requires :people_count, type: Integer

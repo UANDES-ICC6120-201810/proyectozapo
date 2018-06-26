@@ -11,6 +11,6 @@ class LogSerializer < ActiveModel::Serializer
         object.type_of_log
       end,
       def event_time
-        object.updated_at
+        object.updated_at.strftime("%Y-%m-%d %H:%M:%S")
       end
 end

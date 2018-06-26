@@ -11,6 +11,8 @@ module API
           requires :route_code, type: String, desc: "Service code"
         end
         get ":route_code", root: :bus_stop_services do
+          @current_access_point.last_connection = DateTime.now.strftime("%Y-%m-%d %H:%M:%S")
+          @current_access_point.save
           busStopId = @current_access_point.bus_stop_id
           service = Service.where(route_code: permitted_params[:route_code]).first
           if not service.present?

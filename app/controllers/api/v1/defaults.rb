@@ -1,4 +1,3 @@
-# ------------- Aqui se define el formato por defecto de la respuesta de la API -------------
 module API
   module V1
     module Defaults
@@ -37,7 +36,10 @@ module API
           end
 
           def add_log(message, type_of_log)
-            Log.create(:message => message, :type_of_log => type_of_log)
+            Log.create(:message => message,
+                       :type_of_log => type_of_log,
+                       :created_at => DateTime.now.strftime("%Y-%m-%d %H:%M:%S"),
+                       :updated_at => DateTime.now.strftime("%Y-%m-%d %H:%M:%S"))
           end
 
           def logger

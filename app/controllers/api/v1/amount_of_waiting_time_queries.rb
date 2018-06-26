@@ -77,7 +77,7 @@ module API
                       logs_index << log.id
                     end
                   end
-                  Log.where("id in (?)", logs_index)
+                  Log.where("id in (?)", logs_index).order(updated_at: order_by)
                 elsif not params[:correct_bus].present?
                   logs.each do |log|
                     message = log.message.split('/')
@@ -85,7 +85,7 @@ module API
                       logs_index << log.id
                     end
                   end
-                  Log.where("id in (?)", logs_index)
+                  Log.where("id in (?)", logs_index).order(updated_at: order_by)
                 else
                   {'error': "you don't have permission to see this bus or bus do not exist"}
                 end

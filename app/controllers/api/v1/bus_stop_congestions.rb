@@ -15,6 +15,8 @@ module API
       resource :occupation_event do
         desc "Information captured in the control point of the congestion"
         post "", root: :bus_stop_congestions do
+          @current_access_point.last_connection = DateTime.now.strftime("%Y-%m-%d %H:%M:%S")
+          @current_access_point.save
           { 'declared_params' => declared(params) }
           event_time = permitted_params[:source_filename][0..-5]
           event_time = DateTime.strptime(event_time, "%Y%m%d%H%M")

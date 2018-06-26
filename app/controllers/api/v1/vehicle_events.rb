@@ -14,6 +14,8 @@ module API
       resource :vehicle_event do
         desc "Information captured in the control point of a vehicle"
         post "", root: :vehicle_events do
+          @current_access_point.last_connection = DateTime.now.strftime("%Y-%m-%d %H:%M:%S")
+          @current_access_point.save
           { 'declared_params' => declared(params) }
           plate_number = permitted_params[:plate_number]
           vehicle = Vehicle.where(plate_number: plate_number).first
