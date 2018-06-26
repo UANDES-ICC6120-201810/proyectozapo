@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-  before_action :set_service, only: [:show, :edit, :update, :destroy]
+  before_action :set_service, :set_access_group_service, only: [:show, :edit, :update, :destroy]
 
   # GET /services
   # GET /services.json
@@ -54,6 +54,10 @@ class ServicesController < ApplicationController
   # DELETE /services/1
   # DELETE /services/1.json
   def destroy
+    accessGroupService = @access_group_service.where(service_id: params[:id])
+    accessGroupService.each do |service|
+      service.destroy
+    end
     @service.destroy
     respond_to do |format|
       format.html { redirect_to services_url, notice: 'Service was successfully destroyed.' }
@@ -65,6 +69,10 @@ class ServicesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_service
       @service = Service.find(params[:id])
+    end
+
+    def set_access_group_service
+      @access_group_service = AccessGroupService.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

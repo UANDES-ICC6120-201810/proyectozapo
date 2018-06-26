@@ -72,7 +72,7 @@ class AccessGroupsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_access_group_service
       @access_group_service = AccessGroupService.all
-      end
+    end
     def set_access_group_bus_stop
       @access_group_bus_stop = AccessGroupBusStop.all
     end
