@@ -2,32 +2,33 @@
 
 <h1>Access Groups</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Servicios</th>
-      <th>Paradas de Buses</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @access_groups.each do |access_group| %>
+<div class="table-responsive">
+  <table class="table table-bordered table-striped">
+    <thead>
       <tr>
-        <td><%= access_group.name %></td>
-        <td><%= access_group.description %></td>
-        <td><%= button_to "Editar Servicios", access_group_access_group_managements_services_for_access_group_path(access_group.id), :method => "get" %></td>
-        <td><%= button_to "Editar Paradas de Buses", access_group_access_group_managements_bus_stop_for_access_group_path(access_group.id), :method => "get" %></td>
-        <td><%= link_to 'Show', access_group %></td>
-        <td><%= link_to 'Edit', edit_access_group_path(access_group) %></td>
-        <td><%= link_to 'Destroy', access_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Servicios</th>
+        <th>Paradas de Buses</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @access_groups.each do |access_group| %>
+        <tr>
+          <td><%= access_group.name %></td>
+          <td><%= access_group.description %></td>
+          <td><%= button_to "Editar Servicios", access_group_access_group_managements_services_for_access_group_path(access_group.id), :method => "get" %></td>
+          <td><%= button_to "Editar Paradas de Buses", access_group_access_group_managements_bus_stop_for_access_group_path(access_group.id), :method => "get" %></td>
+          <td><%= link_to 'Show', access_group %></td>
+          <td><%= link_to 'Edit', edit_access_group_path(access_group) %></td>
+          <td><%= link_to 'Destroy', access_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
 
 <%= link_to 'New Access Group', new_access_group_path %>

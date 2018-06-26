@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2018_06_26_151619) do
     t.string "ip"
     t.string "status"
     t.string "token"
-    t.string "last_message"
+    t.string "last_connection"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"

@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
 
 
+  get 'info/api_info'
   mount API::Base, at: "/"
   get 'home/index'
   devise_for :users
   root to: 'home#index'
   resources :access_points
-  resources :file_to_updates
+  #resources :file_to_updates
   resources :operators
-  resources :file_packages do
-    get 'file_managements/files_for_file_package'
-    post 'file_managements/update_files_for_file_package'
-  end
+  #resources :file_packages do
+  #  get 'file_managements/files_for_file_package'
+  #  post 'file_managements/update_files_for_file_package'
+  #end
   resources :subscribed_customers
   resources :bus_stops
   resources :services

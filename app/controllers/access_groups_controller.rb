@@ -25,7 +25,6 @@ class AccessGroupsController < ApplicationController
   # POST /access_groups.json
   def create
     @access_group = AccessGroup.new(access_group_params)
-
     respond_to do |format|
       if @access_group.save
         format.html { redirect_to @access_group, notice: 'Access group was successfully created.' }
@@ -73,7 +72,7 @@ class AccessGroupsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_access_group_service
       @access_group_service = AccessGroupService.all
-      end
+    end
     def set_access_group_bus_stop
       @access_group_bus_stop = AccessGroupBusStop.all
     end
