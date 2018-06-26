@@ -1,5 +1,5 @@
 class BusStopsController < ApplicationController
-  before_action :set_bus_stop, :set_access_group_bus_stop, only: [:show, :edit, :update, :destroy]
+  before_action :set_bus_stop, :set_access_group_bus_stop, :set_access_point, only: [:show, :edit, :update, :destroy]
 
   # GET /bus_stops
   # GET /bus_stops.json
@@ -54,9 +54,13 @@ class BusStopsController < ApplicationController
   # DELETE /bus_stops/1
   # DELETE /bus_stops/1.json
   def destroy
+    accessPoint = @access_point.where(bus_stop_id: params[:id])
     accessGroupBusStop = @access_group_bus_stop.where(bus_stop_id: params[:id])
     accessGroupBusStop.each do |busStop|
       busStop.destroy
+    end
+    accessPoint.each do |access_point|
+      access_point.destroy
     end
     @bus_stop.destroy
     respond_to do |format|
@@ -73,6 +77,10 @@ class BusStopsController < ApplicationController
 
     def set_access_group_bus_stop
       @access_group_bus_stop = AccessGroupBusStop.all
+    end
+
+    def set_access_point
+      @access_point = AccessPoint.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
