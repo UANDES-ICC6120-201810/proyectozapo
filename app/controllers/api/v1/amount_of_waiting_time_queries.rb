@@ -1,10 +1,10 @@
 module API
   module V1
-    class BusEvents < Grape::API
+    class AmountOfWaitingTimeQueries < Grape::API
       include API::V1::Defaults
       #Auth
       before {user_client_logger}
-      resource :bus_events do
+      resource :amount_of_waiting_time_queries do
         desc "Return the numbers of passengers in a bus stop"
         params do
           optional :bus, type: String
@@ -64,13 +64,28 @@ module API
             correct_order = true
           end
           #Show result
+          waiting_time_logs =["failed waiting time query","waiting time query","not authorized waiting time query"]
           if correct_bus_stops
             if correct_dates
               if correct_order
+                logs_index = []
+                logs = Log.where("type_of_log IN (?) AND updated_at <= ? AND updated_at >= ?", waiting_time_logs, end_date, start_date)
                 if correct_bus
-                  BusEvent.where("bus_stop_id IN (?) AND vehicle_id = ? AND event_time <= ? AND event_time >= ?", bus_stops, bus.id, end_date, start_date).order(:vehicle_id, event_time: order_by)
+                  logs.each do |log|
+                    message = log.message.split('/')
+                    if bus_stops.include?(BusStop.where(code: message[0]).first.id) and bus.code == message[1]
+                      logs_index << log.id
+                    end
+                  end
+                  Log.where("id in (?)", logs_index)
                 elsif not params[:correct_bus].present?
-                  BusEvent.where("bus_stop_id IN (?) AND event_time <= ? AND event_time >= ?", bus_stops, end_date, start_date).order(:bus_stop_id, event_time: order_by)
+                  logs.each do |log|
+                    message = log.message.split('/')
+                    if bus_stops.include?(BusStop.where(code: message[0]).first.id)
+                      logs_index << log.id
+                    end
+                  end
+                  Log.where("id in (?)", logs_index)
                 else
                   {'error': "you don't have permission to see this bus or bus do not exist"}
                 end

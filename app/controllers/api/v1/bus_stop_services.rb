@@ -14,12 +14,15 @@ module API
           busStopId = @current_access_point.bus_stop_id
           service = Service.where(route_code: permitted_params[:route_code]).first
           if not service.present?
+            add_log(BusStop.find(busStopId).code + "/" + permitted_params[:route_code], 'failed waiting time query')
             {'results': 'error in route code'}
           else
             estimation = BusStopService.where(bus_stop_id: busStopId, service_id: service.id, active: true)
             if estimation.present?
+              add_log(BusStop.find(busStopId).code + "/" + permitted_params[:route_code], 'waiting time query')
               estimation
             else
+              add_log(BusStop.find(busStopId).code + "/" + permitted_params[:route_code], 'not authorized waiting time query')
               {'results': 'error, the route code does not belong to this bus stop'}
             end
           end

@@ -36,6 +36,10 @@ module API
             @current_user = user_client
           end
 
+          def add_log(message, type_of_log)
+            Log.create(:message => message, :type_of_log => type_of_log)
+          end
+
           def logger
             Rails.logger
           end
