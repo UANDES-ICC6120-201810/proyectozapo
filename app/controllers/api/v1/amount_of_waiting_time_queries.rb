@@ -1,13 +1,13 @@
 module API
   module V1
-    class BusEvents < Grape::API
+    class AmountOfWaitingTimeQueries < Grape::API
       include API::V1::Defaults
       #Auth
       before {user_client_logger}
-      resource :bus_events do
+      resource :amount_of_waiting_time_queries do
         desc "Return the numbers of passengers in a bus stop"
         params do
-          optional :bus, type: String
+          optional :route, type: String
           requires :bus_stops, type: JSON
           requires :start, type: DateTime
           requires :end, type: DateTime
@@ -17,15 +17,12 @@ module API
           { 'declared_params' => declared(params) }
           #Check params:
           #Check bus
-          correct_bus = false
+          correct_service = false
           access_group_services = AccessGroupService.where(access_group_id: @current_user.access_group_id)
-          bus = Vehicle.where('plate_number = ? AND is_bus = ?', params[:bus], true).first
-          if bus.present?
-            bus_service = BusService.where(vehicle_id: bus.id).first!
-            if bus_service.present?
-              if access_group_services.where(service_id: bus_service.service_id).first!.present?
-                correct_bus = true
-              end
+          service = Service.where('route_code = ? ', params[:route]).first
+          if service.present?
+            if access_group_services.where(service_id: service.id).first!.present?
+                correct_service = true
             end
           end
           #Check bus_stops
@@ -64,13 +61,28 @@ module API
             correct_order = true
           end
           #Show result
+          waiting_time_logs =["failed waiting time query","waiting time query","not authorized waiting time query"]
           if correct_bus_stops
             if correct_dates
               if correct_order
-                if correct_bus
-                  BusEvent.where("bus_stop_id IN (?) AND vehicle_id = ? AND event_time <= ? AND event_time >= ?", bus_stops, bus.id, end_date, start_date).order(:vehicle_id, event_time: order_by)
+                logs_index = []
+                logs = Log.where("type_of_log IN (?) AND updated_at <= ? AND updated_at >= ?", waiting_time_logs, end_date, start_date)
+                if correct_service
+                  logs.each do |log|
+                    message = log.message.split('/')
+                    if bus_stops.include?(BusStop.where(code: message[0]).first.id) and params[:route] == message[1]
+                      logs_index << log.id
+                    end
+                  end
+                  Log.where("id in (?)", logs_index).order(updated_at: order_by)
                 elsif not params[:correct_bus].present?
-                  BusEvent.where("bus_stop_id IN (?) AND event_time <= ? AND event_time >= ?", bus_stops, end_date, start_date).order(:bus_stop_id, event_time: order_by)
+                  logs.each do |log|
+                    message = log.message.split('/')
+                    if bus_stops.include?(BusStop.where(code: message[0]).first.id)
+                      logs_index << log.id
+                    end
+                  end
+                  Log.where("id in (?)", logs_index).order(updated_at: order_by)
                 else
                   {'error': "you don't have permission to see this bus or bus do not exist"}
                 end

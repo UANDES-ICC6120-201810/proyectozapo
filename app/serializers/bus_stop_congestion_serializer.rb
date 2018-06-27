@@ -3,6 +3,6 @@ class BusStopCongestionSerializer < ActiveModel::Serializer
     object.event_time.strftime("%Y-%m-%d %H:%M:%S")
   end,
       def amount
-        object.amount_of_people
+        object.amount_of_people.round
       end
 end

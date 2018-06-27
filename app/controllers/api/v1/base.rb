@@ -1,4 +1,3 @@
-# ------------- Aqui se definen las rutas de los endpoints activos de la version 1 -------------
 module API
   module V1
     class Base < Grape::API
@@ -14,7 +13,8 @@ module API
       mount API::V1::AmountOfPassengers
       mount API::V1::Services
       mount API::V1::Info
-      # mount API::V1::AnotherResource
+      mount API::V1::BusEvents
+      mount API::V1::AmountOfWaitingTimeQueries
     end
   end
 end
