@@ -49,7 +49,7 @@
     <ul class="navbar-nav ml-auto">
       <% if user_signed_in? %>
         <li class="nav-item">
-          <a class="nav-link" href="#"><button class="btn btn-sm btn btn-primary" type="button">Manage Users</button></a>
+          <a class="nav-link" href="/manage/manage_user/"><button class="btn btn-sm btn btn-primary" type="button">Manage Users</button></a>
         </li>
         <li>
           <a class="nav-link" href="#"><%= button_to('Logout', destroy_user_session_path, method: :delete, class:"btn btn-sm btn-danger") %></a>

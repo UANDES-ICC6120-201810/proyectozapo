@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-
-
+  
   get 'info/api_info'
   mount API::Base, at: "/"
   get 'home/index'
