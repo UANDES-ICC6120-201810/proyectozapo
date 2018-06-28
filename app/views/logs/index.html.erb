@@ -7,6 +7,7 @@
       <tr>
         <th>Message</th>
         <th>Type of log</th>
+        <th>Event time</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -16,6 +17,7 @@
         <tr>
           <td><%= log.message %></td>
           <td><%= log.type_of_log %></td>
+          <td><%= log.updated_at %></td>
           <td><%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
