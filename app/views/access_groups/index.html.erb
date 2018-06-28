@@ -19,8 +19,8 @@
         <tr>
           <td><%= access_group.name %></td>
           <td><%= access_group.description %></td>
-          <td><%= button_to "Edit Services", access_group_access_group_managements_services_for_access_group_path(access_group.id), :method => "get" %></td>
-          <td><%= button_to "Edit Bus Stops", access_group_access_group_managements_bus_stop_for_access_group_path(access_group.id), :method => "get" %></td>
+          <td><%= button_to "Edit Services", access_group_access_group_managements_services_for_access_group_path(access_group.id), :method => "get", :class => 'btn btn-sm btn-outline-info' %></td>
+          <td><%= button_to "Edit Bus Stops", access_group_access_group_managements_bus_stop_for_access_group_path(access_group.id), :method => "get", :class => 'btn btn-sm btn-outline-info' %></td>
           <td><%= link_to 'Edit', edit_access_group_path(access_group) %></td>
           <td><%= link_to 'Destroy', access_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
