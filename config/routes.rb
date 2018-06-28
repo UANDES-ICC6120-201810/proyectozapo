@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :subscribed_customers
   resources :bus_stops
   resources :services
+  resources :logs
   resources :access_groups do
     get 'access_group_managements/services_for_access_group'
     get 'access_group_managements/bus_stop_for_access_group'
