@@ -1,6 +1,6 @@
 class ManagementsController < ApplicationController
   def manage_user
-    @user = User.all
+    @user = User.new
   end
 
   def new
@@ -8,6 +8,23 @@ class ManagementsController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(user_params)
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.json { render :show, status: :created, location: @user }
+      else
+        format.html { render :new }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
   end
+
+  private
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_params
+    params.require(:user).permit(:email, :password)
+  end
+
 end
