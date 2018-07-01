@@ -1,4 +1,6 @@
 class ManagementsController < ApplicationController
+  before_action :admin_create_user, only: [:manage_user ,:create]
+
   def manage_user
     @user = User.new
   end
@@ -11,12 +13,19 @@ class ManagementsController < ApplicationController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
+        flash[:notice] = "User lalla"
+        format.html { redirect_to root_path, notice: 'User was successfully created.'}
       else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.html { redirect_to managements_manage_user_path, notice: 'Error, User already exist'}
       end
+    end
+  end
+
+  protected
+
+  def admin_create_user
+    if current_user != User.first
+      redirect_to root_path
     end
   end
 

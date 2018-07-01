@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   get 'managements/manage_user'
-  post 'managements/manage_user'
+  post 'managements/manage_user', action: :create, controller: "managements"
   get 'info/api_info'
   mount API::Base, at: "/"
   get 'home/index'

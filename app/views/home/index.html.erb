@@ -1,4 +1,6 @@
 <h1>Welcome</h1>
 <p>In the navbar you will find different tools to manage zapo.</p>
-<p>You can create a new user Here.</p>
-<a href="managements/manage_user"><button class="btn btn-sm btn-basic" >Create new User</button></a>
+<% if current_user == User.first %>
+  <p>You can create a new user Here.</p>
+  <a href="managements/manage_user"><button class="btn btn-sm btn-basic" >Create new User</button></a>
+<% end %>
