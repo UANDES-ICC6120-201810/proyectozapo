@@ -35,6 +35,12 @@
             <div class="actions">
               <%= f.submit "Log in", :class => "btn btn-lg btn-success btn-block" %>
             </div>
+            <ul></ul>
+            <% if User.all.count == 0 %>
+              <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+                <%= link_to "Sign up", new_registration_path(resource_name), :class => "btn btn-lg btn-info btn-block" %><br />
+              <% end -%>
+            <% end %>
           <% end %>
         </div>
       </div>

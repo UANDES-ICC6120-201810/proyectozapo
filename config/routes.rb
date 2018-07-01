@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   
+  get 'managements/manage_user'
   get 'info/api_info'
   mount API::Base, at: "/"
   get 'home/index'
-  devise_for :users
+  devise_for :users, controllers: { registrations: "users/registrations"}
   root to: 'home#index'
   resources :access_points
   #resources :file_to_updates
