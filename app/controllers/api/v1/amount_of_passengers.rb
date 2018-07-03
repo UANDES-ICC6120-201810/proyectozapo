@@ -25,7 +25,7 @@ module API
           end
           if bus_stop.present? && range > 0 && range < 8 && access_group_bus_stop.present?
             if access_group_bus_stop.exists?(bus_stop_id: bus_stop.id)
-              result = BusStopCongestion.where('bus_stop_id = ?  AND event_time >= ? AND event_time <= ?',
+              result = BusStopCongestion.where('bus_stop_id = ?  AND event_time >= ? AND event_time <= ? AND amount_of_people IS NOT NULL',
                                                bus_stop.id ,
                                                start_date,
                                                end_date)
