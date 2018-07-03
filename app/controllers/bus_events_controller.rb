@@ -14,6 +14,8 @@ class BusEventsController < ApplicationController
 
   # GET /bus_events/new
   def new
+    @services = Service.all
+    @bus_services = BusService.all
     @bus_event = BusEvent.new
   end
 
