@@ -1,33 +1,34 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Bus Events</h1>
+<div class="table-responsive">
+  <table class="table table-bordered table-striped">
+    <table>
+      <thead>
+        <tr>
+          <th>Vehicle</th>
+          <th>Bus stop</th>
+          <th>Event time</th>
+          <th>Stopped</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Vehicle</th>
-      <th>Bus stop</th>
-      <th>Event time</th>
-      <th>Bus speed</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @bus_events.each do |bus_event| %>
-      <tr>
-        <td><%= bus_event.vehicle %></td>
-        <td><%= bus_event.bus_stop %></td>
-        <td><%= bus_event.event_time %></td>
-        <td><%= bus_event.bus_speed %></td>
-        <td><%= link_to 'Show', bus_event %></td>
-        <td><%= link_to 'Edit', edit_bus_event_path(bus_event) %></td>
-        <td><%= link_to 'Destroy', bus_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Bus Event', new_bus_event_path %>
+      <tbody>
+        <% @bus_events.each do |bus_event| %>
+          <tr>
+            <td><%= bus_event.vehicle.plate_number %></td>
+            <td><%= bus_event.bus_stop.code %></td>
+            <td><%= bus_event.event_time %></td>
+            <% if bus_event.bus_speed == 1.0 %>
+              <td>Yes</td>
+            <% else %>
+              <td>No</td>
+            <% end %>
+            <td><%= link_to 'Destroy', bus_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </table>
+</div>
