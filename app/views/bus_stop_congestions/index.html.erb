@@ -17,7 +17,7 @@
         <tr>
           <td><%= bus_stop_congestion.bus_stop.code %></td>
           <td><%= bus_stop_congestion.event_time %></td>
-          <td><%= bus_stop_congestion.amount_of_people %></td>
+          <td><%= bus_stop_congestion.amount_of_people.to_i %></td>
           <td><%= link_to 'Destroy', bus_stop_congestion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
