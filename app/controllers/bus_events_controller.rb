@@ -5,6 +5,8 @@ class BusEventsController < ApplicationController
   # GET /bus_events.json
   def index
     @bus_events = BusEvent.all
+    @bus_services = BusService.all
+    @services = Service.all
   end
 
   # GET /bus_events/1
@@ -14,8 +16,6 @@ class BusEventsController < ApplicationController
 
   # GET /bus_events/new
   def new
-    @services = Service.all
-    @bus_services = BusService.all
     @bus_event = BusEvent.new
   end
 

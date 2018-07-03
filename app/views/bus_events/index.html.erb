@@ -20,8 +20,8 @@
             <td><%= bus_event.vehicle.plate_number %></td>
             <td><%= bus_event.bus_stop.code %></td>
             <td>
-              <% if(@bus_services.where(vehicle_id: bus_event.vehicle.id).first.present?) %>
-                  <%= @services.find(@bus_services.where(vehicle_id: bus_event.vehicle.id).first.service_id).route_code%>
+              <% if(@bus_services.where(vehicle_id: bus_event.vehicle.id).first().present?) %>
+                  <%= @services.find(@bus_services.where(vehicle_id: bus_event.vehicle.id).first().service_id).route_code%>
               <% else %>
                   <%= "-"%>
               <% end %>
