@@ -7,6 +7,7 @@
         <tr>
           <th>Vehicle</th>
           <th>Bus stop</th>
+          <th>Route</th>
           <th>Event time</th>
           <th>Stopped</th>
           <th colspan="3"></th>
@@ -18,6 +19,13 @@
           <tr>
             <td><%= bus_event.vehicle.plate_number %></td>
             <td><%= bus_event.bus_stop.code %></td>
+            <td>
+              <% if(@bus_services.where(vehicle_id: bus_event.vehicle.id).present?) %>
+                  <%= @services.find(@bus_services.where(vehicle_id: bus_event.vehicle.id).first().service_id).route_code%>
+              <% else %>
+                  <%= "-"%>
+              <% end %>
+                </td>
             <td><%= bus_event.event_time %></td>
             <% if bus_event.bus_speed == 1.0 %>
               <td>Yes</td>
