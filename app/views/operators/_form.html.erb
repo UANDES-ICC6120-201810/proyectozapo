@@ -1,27 +1,33 @@
-<%= form_with(model: operator, local: true) do |form| %>
-  <% if operator.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(operator.errors.count, "error") %> prohibited this operator from being saved:</h2>
+<div class="container">
+  <div class="row vertical-offset-100">
+    <div class="col-md-4 col-md-offset-4">
+      <%= form_with(model: operator, local: true) do |form| %>
+        <% if operator.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(operator.errors.count, "error") %> prohibited this operator from being saved:</h2>
 
-      <ul>
-      <% operator.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+            <ul>
+              <% operator.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <%= form.label :name %>
+          <%= form.text_field :name , :class => 'form-control'%>
+        </div>
+
+        <div class="field">
+          <%= form.label :operator_number %>
+          <%= form.text_field :operator_number, :class => 'form-control' %>
+        </div>
+        <ul></ul>
+        <div class="actions">
+          <%= form.submit "Create Operator", :class => "btn btn-lg btn-info btn-block"%>
+        </div>
       <% end %>
-      </ul>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
   </div>
-
-  <div class="field">
-    <%= form.label :operator_number %>
-    <%= form.text_field :operator_number %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
