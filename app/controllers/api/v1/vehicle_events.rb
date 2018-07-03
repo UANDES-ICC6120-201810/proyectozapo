@@ -23,16 +23,20 @@ module API
             Vehicle.create!({plate_number: plate_number})
           end
           vehicle = Vehicle.where(plate_number: plate_number).first!
-          begin
-            BusEvent.create!({
-                                 vehicle_id: vehicle[:id],
-                                 bus_stop_id: @current_access_point.bus_stop_id,
-                                 event_time: permitted_params[:event_time],
-                                 bus_speed: permitted_params[:speed]
-                             })
+          if (BusEvent.where(vehicle_id: vehicle[:id],bus_stop_id: @current_access_point.bus_stop_id, event_time: permitted_params[:event_time]).present?)
             {'results': 'event added'}
-          rescue
-            {'results': 'error'}
+          else
+            begin
+              BusEvent.create!({
+                                   vehicle_id: vehicle[:id],
+                                   bus_stop_id: @current_access_point.bus_stop_id,
+                                   event_time: permitted_params[:event_time],
+                                   bus_speed: permitted_params[:speed]
+                               })
+              {'results': 'event added'}
+            rescue
+              {'results': 'error'}
+            end
           end
         end
       end
