@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   #  post 'file_managements/update_files_for_file_package'
   #end
   resources :subscribed_customers
+  resources :bus_events
   resources :bus_stops
   resources :services
   resources :logs

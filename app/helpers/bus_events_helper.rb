@@ -1,0 +1,2 @@
+module BusEventsHelper
+end
