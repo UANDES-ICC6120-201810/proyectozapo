@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Occupation</h1>
+<div class="table-responsive">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Bus stop</th>
+        <th>Event time</th>
+        <th>Amount of people</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @bus_stop_congestions.each do |bus_stop_congestion| %>
+        <tr>
+          <td><%= bus_stop_congestion.bus_stop.code %></td>
+          <td><%= bus_stop_congestion.event_time %></td>
+          <td><%= bus_stop_congestion.amount_of_people %></td>
+          <td><%= link_to 'Destroy', bus_stop_congestion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+

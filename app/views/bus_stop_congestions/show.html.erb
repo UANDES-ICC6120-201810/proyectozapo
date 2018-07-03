@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bus stop:</strong>
+  <%= @bus_stop_congestion.bus_stop %>
+</p>
+
+<p>
+  <strong>Event time:</strong>
+  <%= @bus_stop_congestion.event_time %>
+</p>
+
+<p>
+  <strong>Amount of people:</strong>
+  <%= @bus_stop_congestion.amount_of_people %>
+</p>
+
+<%= link_to 'Edit', edit_bus_stop_congestion_path(@bus_stop_congestion) %> |
+<%= link_to 'Back', bus_stop_congestions_path %>

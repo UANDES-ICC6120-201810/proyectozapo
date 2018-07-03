@@ -1,0 +1,2 @@
+module BusStopCongestionsHelper
+end

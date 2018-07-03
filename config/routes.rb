@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   #end
   resources :subscribed_customers
   resources :bus_events
+  resources :bus_stop_congestions
   resources :bus_stops
   resources :services
   resources :logs
