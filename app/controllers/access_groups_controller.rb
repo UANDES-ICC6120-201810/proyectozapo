@@ -1,5 +1,5 @@
 class AccessGroupsController < ApplicationController
-  before_action :set_access_group, :set_access_group_bus_stop, :set_access_group_service, only: [:show, :edit, :update, :destroy]
+  before_action :set_access_group, :set_access_group_bus_stop, :set_access_group_service, :set_subscribed_customer, only: [:show, :edit, :update, :destroy]
 
   # GET /access_groups
   # GET /access_groups.json
@@ -55,11 +55,15 @@ class AccessGroupsController < ApplicationController
   def destroy
     accessGroupBusStop = @access_group_bus_stop.where(access_group_id: params[:id])
     accessGroupService = @access_group_service.where(access_group_id: params[:id])
+    subscribedCustomer = @subscribed_customer.where(access_group_id: params[:id])
     accessGroupBusStop.each do |busStop|
       busStop.destroy
     end
     accessGroupService.each do |service|
       service.destroy
+    end
+    subscribedCustomer.each do |subscribed_customer|
+      subscribed_customer.destroy
     end
     @access_group.destroy
     respond_to do |format|
@@ -78,6 +82,10 @@ class AccessGroupsController < ApplicationController
     end
     def set_access_group
       @access_group = AccessGroup.find(params[:id])
+    end
+
+    def set_subscribed_customer
+      @subscribed_customer = SubscribedCustomer.all
     end
 
   # Never trust parameters from the scary internet, only allow the white list through.
