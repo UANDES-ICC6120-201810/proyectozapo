@@ -18,6 +18,10 @@ module API
           @current_access_point.save
           { 'declared_params' => declared(params) }
           plate_number = permitted_params[:plate_number]
+          position = plate_number.enum_for(:scan, /[A-Z]\d/).map { Regexp.last_match.begin(0) }
+          if (position[0] > 0)
+            plate_number.insert(position[0] + 1, '-')
+          end
           vehicle = Vehicle.where(plate_number: plate_number).first
           if not vehicle.present?
             Vehicle.create!({plate_number: plate_number})
