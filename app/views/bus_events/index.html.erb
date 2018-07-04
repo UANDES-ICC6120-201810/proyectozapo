@@ -32,7 +32,7 @@
             <% else %>
               <td>No</td>
             <% end %>
-            <td><%= link_to 'Edit', edit_bus_events_path(bus_event) %></td>
+            <td><%= link_to 'Edit', edit_bus_event_path(bus_event) %></td>
             <td><%= link_to 'Destroy', bus_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
