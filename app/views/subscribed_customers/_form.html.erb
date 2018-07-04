@@ -16,9 +16,8 @@
 
         <div class="field">
           <%= form.label :access_group_id %>
-          <%= form.collection_select :access_group_id, AccessGroup.order(:name), :id, :name, include_blank: false, :class => 'dropdown-menu' %>
+          <%= form.collection_select :access_group_id, AccessGroup.order(:name), :id, :name, {}, :class => 'form-control' %>
         </div>
-
 
         <div class="field">
           <%= form.label :name %>
@@ -31,7 +30,7 @@
         </div>
         <ul></ul>
         <div class="actions">
-          <%= form.submit "Create Customer", :class => "btn btn-lg btn-info btn-block" %>
+          <%= form.submit :class => "btn btn-lg btn-info btn-block" %>
         </div>
       <% end %>
     </div>

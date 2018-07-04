@@ -1,27 +1,33 @@
-<%= form_with(model: access_point, local: true) do |form| %>
-  <% if access_point.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(access_point.errors.count, "error") %> prohibited this access_point from being saved:</h2>
+<div class="container">
+  <div class="row vertical-offset-100">
+    <div class="col-md-4 col-md-offset-4">
+      <%= form_with(model: access_point, local: true) do |form| %>
+        <% if access_point.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(access_point.errors.count, "error") %> prohibited this access_point from being saved:</h2>
 
-      <ul>
-      <% access_point.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+            <ul>
+            <% access_point.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <%= form.label :bus_stop_id %>
+          <%= form.select :bus_stop_id, options_for_select(@bus_stops.map{|s|[s.code, s.id]}), {}, class: 'form-control' %>
+        </div>
+
+        <div class="field">
+          <%= form.label :mac %>
+          <%= form.text_field :mac, :class => 'form-control' %>
+        </div>
+        <ul></ul>
+        <div class="actions">
+          <%= form.submit :class => "btn btn-lg btn-info btn-block" %>
+        </div>
       <% end %>
-      </ul>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :bus_stop_id %>
-    <%= form.select :bus_stop_id, options_for_select(@bus_stops.map{|s|[s.code, s.id]}) %>
   </div>
-
-  <div class="field">
-    <%= form.label :mac %>
-    <%= form.text_field :mac %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
