@@ -25,7 +25,7 @@ class BusStopCongestionsController < ApplicationController
   # POST /bus_stop_congestions.json
   def create
     @bus_stop_congestion = BusStopCongestion.new(bus_stop_congestion_params)
-
+    @bus_stop_congestion.event_time = DateTime.parse(bus_stop_congestion_params[:event_time])
     respond_to do |format|
       if @bus_stop_congestion.save
         format.html { redirect_to @bus_stop_congestion, notice: 'Bus stop congestion was successfully created.' }
@@ -40,6 +40,7 @@ class BusStopCongestionsController < ApplicationController
   # PATCH/PUT /bus_stop_congestions/1
   # PATCH/PUT /bus_stop_congestions/1.json
   def update
+    @bus_stop_congestion.event_time = DateTime.parse(bus_stop_congestion_params[:event_time])
     respond_to do |format|
       if @bus_stop_congestion.update(bus_stop_congestion_params)
         format.html { redirect_to @bus_stop_congestion, notice: 'Bus stop congestion was successfully updated.' }

@@ -27,7 +27,7 @@ class BusEventsController < ApplicationController
   # POST /bus_events.json
   def create
     @bus_event = BusEvent.new(bus_event_params)
-
+    @bus_event.event_time = DateTime.parse(bus_event_params[:event_time])
     respond_to do |format|
       if @bus_event.save
         format.html { redirect_to @bus_event, notice: 'Bus event was successfully created.' }
@@ -42,6 +42,7 @@ class BusEventsController < ApplicationController
   # PATCH/PUT /bus_events/1
   # PATCH/PUT /bus_events/1.json
   def update
+    @bus_event.event_time = DateTime.parse(bus_event_params[:event_time])
     respond_to do |format|
       if @bus_event.update(bus_event_params)
         format.html { redirect_to @bus_event, notice: 'Bus event was successfully updated.' }

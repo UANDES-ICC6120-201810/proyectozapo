@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'grape'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'grape-active_model_serializers'
+gem 'font-awesome-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
