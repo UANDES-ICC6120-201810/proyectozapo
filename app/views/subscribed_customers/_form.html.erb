@@ -1,34 +1,39 @@
-<%= form_with(model: subscribed_customer, local: true) do |form| %>
-  <% if subscribed_customer.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(subscribed_customer.errors.count, "error") %> prohibited this subscribed_customer from being saved:</h2>
+<div class="container">
+  <div class="row vertical-offset-100">
+    <div class="col-md-4 col-md-offset-4">
+      <%= form_with(model: subscribed_customer, local: true) do |form| %>
+        <% if subscribed_customer.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(subscribed_customer.errors.count, "error") %> prohibited this subscribed_customer from being saved:</h2>
 
-      <ul>
-      <% subscribed_customer.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+            <ul>
+            <% subscribed_customer.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <%= form.label :access_group_id %>
+          <%= form.collection_select :access_group_id, AccessGroup.order(:name), :id, :name, include_blank: false, :class => 'dropdown-menu' %>
+        </div>
+
+
+        <div class="field">
+          <%= form.label :name %>
+          <%= form.text_field :name, :class => 'form-control'  %>
+        </div>
+
+        <div class="field">
+          <%= form.label :description %>
+          <%= form.text_field :description, :class => 'form-control'  %>
+        </div>
+        <ul></ul>
+        <div class="actions">
+          <%= form.submit "Create Customer", :class => "btn btn-lg btn-info btn-block" %>
+        </div>
       <% end %>
-      </ul>
     </div>
-  <% end %>
-
-
-  <div class="field">
-    <%= form.label :access_group_id %>
-    <%= form.collection_select :access_group_id, AccessGroup.order(:name), :id, :name, include_blank: false %>
   </div>
-
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
