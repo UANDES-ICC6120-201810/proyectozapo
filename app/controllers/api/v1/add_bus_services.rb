@@ -64,18 +64,19 @@ module API
           service = Service.where(route_code: route_code).first!
           bus = Vehicle.where(plate_number: plate_number).first!
           operator = Operator.where(operator_number: operator_number).first!
-          bus_service = BusService.where('vehicle_id = ?',bus.id).first
+          bus_service = BusService.where(vehicle_id: bus.id).first
           if bus_service.present?
             bus_service.update({service_id: service.id,
                                  operator_id: operator.id ,
                                  captured_at: result[:captured_at]
                                 })
+          else
+            BusService.create!({service_id: service.id,
+                                vehicle_id: bus.id,
+                                operator_id: operator.id,
+                                captured_at: result[:captured_at]
+                               })
           end
-          BusService.create!({service_id: service.id,
-                              vehicle_id: bus.id,
-                              operator_id: operator.id,
-                              captured_at: result[:captured_at]
-                             })
         end
         def add_not_bus(result)
           vehicle = Vehicle.where(plate_number: result)
