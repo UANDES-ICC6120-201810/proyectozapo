@@ -5,9 +5,9 @@
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
-        <th>Access group</th>
         <th>Name</th>
         <th>Description</th>
+        <th>Access group</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -15,9 +15,9 @@
     <tbody>
       <% @subscribed_customers.each do |subscribed_customer| %>
         <tr>
-          <td><%= subscribed_customer.access_group.name %></td>
           <td><%= subscribed_customer.name %></td>
           <td><%= subscribed_customer.description %></td>
+          <td><%= subscribed_customer.access_group.name %></td>
           <td><%= link_to 'Show', subscribed_customer %></td>
           <td><%= link_to 'Edit', edit_subscribed_customer_path(subscribed_customer) %></td>
           <td><%= link_to 'Destroy', subscribed_customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
